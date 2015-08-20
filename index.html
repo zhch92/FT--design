@@ -6,6 +6,8 @@
     <title>final</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/unslider.min.js"></script>
 </head>
 
 <body>
@@ -17,16 +19,16 @@
                 <div class="nav">
                     <ul class="clearfix">
                         <li class="active"><a href="#">HOME</a> </li>
-                        <li><a href="#">PRODUCT</a> </li>
-                        <li><a href="#">AWARDS</a> </li>
-                        <li><a href="#">ABOUT</a> </li>
-                        <li><a href="#">CONTACT</a> </li>
+                        <li><a href="#product">PRODUCT</a> </li>
+                        <li><a href="#awards">AWARDS</a> </li>
+                        <li><a href="#about">ABOUT</a> </li>
+                        <li><a href="#contact">CONTACT</a> </li>
                     </ul>
                 </div>
             </div>
         </div>
         <h2>DESIGN CHANGES IN LIEF</h2>
-        <h1><img src="images/logo_img.png" alt=""></h1>
+        <h1 class="logo_img"><img src="images/logo_img.png" alt=""></h1>
         <h1 class="logo_font"><img src="images/logo_font.png" alt=""></h1>
         <a class="down" href="#"></a>
     </div>
@@ -35,27 +37,27 @@
             <img class="bg" src="images/banner_1.jpg" alt="">
             <p class="title">WHAT WE CAN DO</p>
             <ul class="clearfix">
-                <li>
+                <li class="li_1">
                     <div class="img"><img src="images/nav_01.png" alt=""></div>
                     <p class="title_n">产品规划</p>
                     <p class="title_n_d">PRODUCT PLANNING</p>
                 </li>
-                <li>
+                <li class="li_1">
                     <div class="img"><img src="images/nav_02.png" alt=""></div>
                     <p class="title_n">产品开发</p>
                     <p class="title_n_d">DEVELOPMENT</p>
                 </li>
-                <li>
+                <li class="li_1">
                     <div class="img"><img src="images/nav_03.png" alt=""></div>
                     <p class="title_n">工业设计</p>
                     <p class="title_n_d">INDUSTRIAL DESIGN</p>
                 </li>
-                <li>
+                <li class="li_1">
                     <div class="img"><img src="images/nav_04.png" alt=""></div>
                     <p class="title_n">包装设计</p>
                     <p class="title_n_d">PACKAGE DESIGN</p>
                 </li>
-                <li>
+                <li class="li_1">
                     <div class="img"><img src="images/nav_05.png" alt=""></div>
                     <p class="title_n">工程验证</p>
                     <p class="title_n_d">STRUCTURAL DESIGN</p>
@@ -104,10 +106,31 @@
             </ul>
         </div>
     </div>
-    <div class="floor_3">
+    <div class="floor_3 banner" id="b04">
+    <a href="#" name="product"></a>
+     <ul class="clearfix">
+        <li>
         <img class="bg" src="images/banner_2.jpg" alt="">
-        <h1>PRODUCT</h1>
-    </div>
+            
+        </li>
+        <li>
+        <img class="bg" src="images/banner_3.jpg" alt="">
+            
+        </li>
+        <li>
+        <img class="bg" src="images/banner_4.jpg" alt="">
+            
+        </li>
+        <li>
+        <img class="bg" src="images/banner_5.jpg" alt="">
+            
+        </li>
+    </ul>
+
+    <a href="javascript:void(0);" class="arrow pre"><img class="arrow" id="al" src="images/pre.png" alt="prev" width="20" height="35"></a>
+    <a href="javascript:void(0);" class="arrow next"><img class="arrow" id="ar" src="images/next.png" alt="next" width="20" height="37"></a>
+</div>
+   
     <div class="floor_4">
         <div class="item_1"><img src="images/item_1.jpg" alt=""></div>
         <div class="item_2"><img src="images/item_2.jpg" alt=""></div>
@@ -132,6 +155,7 @@
         <div class="item_21"><img src="images/item_21.jpg" alt=""></div>
     </div>
     <div class="floor_5">
+    <a href="#"  name="awards"></a>
         <img src="images/banner_3.jpg" alt="" class="bg">
         <h1>AWARDS</h1>
         <h2>OUR ACOMPLISHMENTS</h2>
@@ -175,16 +199,17 @@
         </div>
     </div>
     <div class="floor_6">
+    <a href="#" name="about"></a>
         <div class="header">
             <div class="head clearfix">
                 <div class="logo"><img src="images/logo.png" alt=""></div>
                 <div class="nav">
                     <ul class="clearfix">
                         <li class="active"><a href="#">HOME</a> </li>
-                        <li><a href="#">PRODUCT</a> </li>
-                        <li><a href="#">AWARDS</a> </li>
-                        <li><a href="#">ABOUT</a> </li>
-                        <li><a href="#">CONTACT</a> </li>
+                        <li><a href="#product">PRODUCT</a> </li>
+                        <li><a href="#awards">AWARDS</a> </li>
+                        <li><a href="#about">ABOUT</a> </li>
+                        <li><a href="#contact">CONTACT</a> </li>
                     </ul>
                 </div>
             </div>
@@ -233,6 +258,7 @@
         </div>
     </div>
     <div class="floor_7">
+    <a href="#" name="contact"></a>
         <div class="contact">
         <img class="bg" src="images/banner_4.jpg" alt="">
             <h1>COTNACT</h1>
@@ -280,6 +306,19 @@
                <p>xxxxxxxxxxxxxxxxxxxx</p>
           </div>
      </div>
+<script>
+$(document).ready(function(e) {
+    var unslider04 = $('#b04').unslider({
+        dots: true
+    }),
+    data04 = unslider04.data('unslider');
+    
+    $('.arrow').click(function() {
+        var fn = this.className.split(' ')[1];
+        data04[fn]();
+    });
+});
+</script>
 </body>
 
 </html>
