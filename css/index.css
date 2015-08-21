@@ -766,9 +766,16 @@ li {
   margin: 0 auto;
 }
 .floor_5 .awards ul li {
+  position: relative;
   width: 195px;
   float: left;
   margin: 0 10px;
+  transition: all 0.2s linear;
+}
+.floor_5 .awards ul li:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0px, -2px, 0px);
+  z-index: 2;
 }
 .floor_5 .awards ul li .img {
   width: 175px;
@@ -818,7 +825,7 @@ li {
   margin-bottom: 40px;
   z-index: 999;
 }
-.floor_6 p {
+.floor_6 .state {
   padding-left: 98px;
   font-size: 14px;
   color: #a3a3a3;
@@ -876,6 +883,30 @@ li {
   height: 290px;
   width: 205px;
   margin-bottom: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.floor_6 .item ul li:hover .introduce {
+  bottom: 0px;
+}
+.floor_6 .item ul li .introduce {
+  width: 175px;
+  height: 85px;
+  padding: 15px ;
+  position: absolute;
+  bottom: -115px;
+  left: 0;
+  background: #cb134b;
+  color: #ffffff;
+  transition: all .5s;
+}
+.floor_6 .item ul li .introduce .name {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.floor_6 .item ul li .introduce .text {
+  font-size: 14px;
+  line-height: 20px;
 }
 .floor_6 .item .li_1 {
   height: 875px;

@@ -928,9 +928,16 @@ li {
             width: 870px;
             margin: 0 auto;
             li {
+                position: relative;
                 width: 195px;
                 float: left;
                 margin: 0 10px;
+                transition: all 0.2s linear;
+                &:hover{
+                  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0px, -2px, 0px);
+    z-index: 2;
+                }
                 .img {
                     width: 175px;
                     margin: 0 auto;
@@ -985,7 +992,7 @@ li {
         margin-bottom: 40px;
         z-index: 999;
     }
-    p {
+    .state {
         padding-left: 98px;
         font-size: 14px;
         color: #a3a3a3;
@@ -1041,6 +1048,30 @@ li {
                 height: 290px;
                 width: 205px;
                 margin-bottom: 6px;
+                position: relative;
+                overflow: hidden;
+                &:hover .introduce{
+                    bottom: 0px;
+                }
+                .introduce{
+                    width: 175px;
+                    height: 85px;
+                    padding: 15px ;
+                    position: absolute;
+                    bottom: -115px;
+                    left: 0;
+                    background: #cb134b;
+                    color: #ffffff;
+                    transition:all .5s;
+                    .name{
+                        font-size: 16px;
+                        margin-bottom: 10px;
+                    }
+                    .text{
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+                }
             }
         }
         .li_1 {
