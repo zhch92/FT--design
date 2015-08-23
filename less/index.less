@@ -509,23 +509,12 @@ li {
     display: block;
     content: '';
 }
-
-.floor_1 {
-    position: relative;
-    width: 100%;
-    height: 635px;
-    .bg {
-        vertical-align: top;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        width: 100%;
-        border: 0;
-        display: block;
-    }
     .header {
         width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99999;
         .head {
             width: 1024px;
             margin: 0 auto;
@@ -553,9 +542,27 @@ li {
             }
         }
     }
+.floor_1 {
+    position: relative;
+    width: 100%;
+    // height: 635px;
+    height: 100%;
+    .bg {
+        vertical-align: top;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+    }
+
     h2 {
         text-align: center;
-        margin-top: 115px;
+        // margin-top: 115px;
+        padding-top: 185px;
         color: #ffffff;
         margin-bottom: 85px;
         position: relative;
@@ -579,6 +586,12 @@ li {
         margin: 54px auto;
         background: url(../images/down.png) no-repeat;
         cursor: pointer;
+        opacity: .5;
+        filter:Alpha(opacity=50);
+        &:hover{
+opacity: 1;
+filter:Alpha(opacity=100);
+        }
     }
 }
 
@@ -633,9 +646,8 @@ li {
                     text-align: center;
                 }
             }
-            .li_1{
+            .li_1 {
                 background: url(../images/nav_r.png) no-repeat right 10px;
-                
             }
         }
     }
@@ -649,9 +661,15 @@ li {
         text-decoration: none;
         background: url(../images/more.png) no-repeat 0px 0px;
     }
+    .more_active{
+        background: url(../images/more_active.png) no-repeat 0px 0px;
+
+    }
+
     #more {
         background: #000000;
         padding-bottom: 50px;
+        display: none;
         ul {
             width: 1160px;
             margin: 0 auto;
@@ -661,7 +679,7 @@ li {
                 margin: 0 17px;
                 &:hover {
                     transform: rotateY(360deg);
-                    transition: all 1.5s;
+                    transition: all 2s;
                 }
                 .img {
                     margin: 0 auto;
@@ -690,10 +708,11 @@ li {
     // background: red;
     width: 100%;
     height: 626px;
-    &:hover .arrow{
+    &:hover .arrow {
         display: block;
     }
-    li {
+    .slides{
+     li {
         float: left;
         width: 100%;
         height: 626px;
@@ -701,8 +720,73 @@ li {
             width: 100%;
             height: 626px;
         }
+    }   
     }
-    .arrow{
+    
+     .flex-prev {
+            display: block;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            cursor: pointer;
+            position: absolute;
+            left: 40px;
+            background: url(../images/pre.png) center center no-repeat;
+        }
+        .flex-next {
+            display: block;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            cursor: pointer;
+            position: absolute;
+            right: 40px;
+            background: url(../images/next.png) center center no-repeat;
+        }
+        .flex-control-nav {
+            position: absolute;
+            bottom: 10px;
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+            li {
+                display: inline-block;
+                border-radius: 14px;
+                width: 14px;
+                height: 14px;
+                margin: 0 8px;
+                *display: inline;
+                zoom: 1;
+            }
+            a {
+                display: inline-block;
+                border:1px solid #b8b8b8;
+                border-radius: 10px;
+                width: 14px;
+                height: 14px;
+                line-height: 40px;
+                overflow: hidden;
+                // background: #ffffff;
+                cursor: pointer;
+            }
+            .flex-active {
+                background: #d1062b;
+            }
+        }
+        .flex-direction-nav {
+            position: absolute;
+            z-index: 3;
+            width: 100%;
+            top: 45%;
+            li{
+                a{
+                    display:block;width:50px;height:50px;overflow:hidden;cursor:pointer;position:absolute;
+                }
+                .flex-prev{left:40px;background:url(../images/pre.png) center center no-repeat;}
+                .flex-next{right:40px;background:url(../images/next.png) center center no-repeat;}
+            }
+        }
+    .arrow {
         display: none;
     }
     .pre {
@@ -770,69 +854,88 @@ li {
     }
     img {
         width: 100%;
+        height: 100%;
+        transition: all .5s;
+        &:hover {
+            transform: scale(1.1, 1.1);
+        }
+    }
+    .item {
+        overflow: hidden;
     }
     .item_1 {
         position: absolute;
         top: 0;
         width: 33.3%;
+        height: 745px;
     }
     .item_2 {
         position: absolute;
         left: 33.3%;
         width: 33.3%;
+        height: 373px;
     }
     .item_3 {
         position: absolute;
         width: 33.3%;
         left: 66.6%;
+        height: 373px;
     }
     .item_4 {
         position: absolute;
         top: 349px;
         left: 33.3%;
         width: 66.6%;
+        height: 350px;
     }
     .item_5 {
         position: absolute;
         top: 698px;
         left: 0;
         width: 47%;
+        height: 350px;
     }
     .item_6 {
         position: absolute;
         top: 698px;
         left: 47%;
         width: 19.6%;
+        height: 350px;
     }
     .item_7 {
         position: absolute;
         top: 698px;
         left: 66.6%;
         width: 33.4%;
+        height: 657px;
     }
     .item_8 {
         position: absolute;
-        top: 1049px;
+        top: 1048px;
         left: 0;
         width: 16.3%;
+        height: 478px;
     }
     .item_9 {
         position: absolute;
         left: 16.3%;
-        top: 1049px;
+        top: 1048px;
         width: 16.9%;
+        height: 305px;
     }
     .item_10 {
         position: absolute;
         left: 33.3%;
-        top: 1049px;
+        top: 1048px;
         width: 33.3%;
+        height: 305px;
     }
     .item_11 {
         position: absolute;
         left: 0;
         top: 1524px;
         width: 16.3%;
+        height: 176px;
     }
     .item_12 {
         position: absolute;
@@ -845,61 +948,70 @@ li {
         left: 16.3%;
         top: 1351px;
         width: 33.5%;
+        height: 350px;
     }
     .item_14 {
         position: absolute;
-        left: 49.6%;
+        left: 49.8%;
         top: 1351px;
-        width: 50%;
+        width: 50.2%;
+        height: 350px;
     }
     .item_15 {
         position: absolute;
         left: 0;
         top: 1700px;
         width: 33.3%;
+        height: 175px;
     }
     .item_16 {
         position: absolute;
         left: 33.3%;
         top: 1700px;
-        width: 16.3%;
+        width: 16.5%;
+        height: 350px;
     }
     .item_17 {
         position: absolute;
-        left: 49.6%;
+        left: 49.8%;
         top: 1700px;
         width: 16.7%;
+        height: 175px;
     }
     .item_18 {
         position: absolute;
-        left: 49.6%;
+        left: 49.8%;
         top: 1876px;
         width: 16.7%;
+        height: 175px;
     }
     .item_19 {
         position: absolute;
-        left: 66.3%;
+        left: 66.5%;
         top: 1700px;
-        width: 33.3%;
+        width: 33.5%;
+        height: 350px;
     }
     .item_20 {
         position: absolute;
         left: 0%;
         top: 1876px;
-        width: 16.3%;
+        width: 16.65%;
+        height: 175px;
     }
     .item_21 {
         position: absolute;
-        left: 16.3%;
+        left: 16.65%;
         top: 1876px;
-        width: 16.3%;
+        width: 16.65%;
+        height: 175px;
     }
 }
 
 .floor_5 {
     position: relative;
     width: 100%;
-    height: 971px;
+    height: 911px;
     .bg {
         vertical-align: top;
         position: absolute;
@@ -933,10 +1045,10 @@ li {
                 float: left;
                 margin: 0 10px;
                 transition: all 0.2s linear;
-                &:hover{
-                  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    transform: translate3d(0px, -2px, 0px);
-    z-index: 2;
+                &:hover {
+                    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+                    transform: translate3d(0px, -2px, 0px);
+                    z-index: 2;
                 }
                 .img {
                     width: 175px;
@@ -1050,24 +1162,24 @@ li {
                 margin-bottom: 6px;
                 position: relative;
                 overflow: hidden;
-                &:hover .introduce{
+                &:hover .introduce {
                     bottom: 0px;
                 }
-                .introduce{
+                .introduce {
                     width: 175px;
                     height: 85px;
-                    padding: 15px ;
+                    padding: 15px;
                     position: absolute;
                     bottom: -115px;
                     left: 0;
                     background: #cb134b;
                     color: #ffffff;
-                    transition:all .5s;
-                    .name{
+                    transition: all .5s;
+                    .name {
                         font-size: 16px;
                         margin-bottom: 10px;
                     }
-                    .text{
+                    .text {
                         font-size: 14px;
                         line-height: 20px;
                     }
@@ -1119,7 +1231,7 @@ li {
 .floor_7 {
     position: relative;
     width: 100%;
-    height: 1025px;
+    height: 1007px;
     overflow: hidden;
     .bg {
         vertical-align: top;
