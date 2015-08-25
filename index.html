@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+
 </head>
 
 <body>
@@ -16,16 +18,16 @@
             <div class="logo"><img src="images/logo.png" alt=""></div>
             <div class="nav">
                 <ul class="clearfix">
-                    <li class="active"><a href="#">HOME</a> </li>
-                    <li><a href="#product">PRODUCT</a> </li>
-                    <li><a href="#awards">AWARDS</a> </li>
-                    <li><a href="#about">ABOUT</a> </li>
-                    <li><a href="#contact">CONTACT</a> </li>
+                    <li class="home active"><a href="javascript:void(0);">HOME</a> </li>
+                    <li class="product"><a href="javascript:void(0);">PRODUCT</a> </li>
+                    <li class="awards"><a href="javascript:void(0);">AWARDS</a> </li>
+                    <li class="about"><a href="javascript:void(0);">ABOUT</a> </li>
+                    <li class="contact"><a href="javascript:void(0);">CONTACT</a> </li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="floor_1">
+    <div id="floor_1" class="floor_1">
         <img class="bg" src="images/banner.jpg" alt="">
         <h2>DESIGN CHANGES IN LIEF</h2>
         <h1 class="logo_img"><img src="images/logo_img.png" alt=""></h1>
@@ -327,6 +329,8 @@
     <div class="footer">
         <div class="foot">
             <p>xxxxxxxxxxxxxxxxxxxx</p>
+            <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+            <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
         </div>
     </div>
     <script type="text/javascript">
@@ -335,14 +339,41 @@
             directionNav: true,
             pauseOnAction: false
         });
-        $(".floor_1").scroll(function() {
-            alert("1")
-            // var sTop = $(document).scrollTop();
-            // if (sTop < 597) {
+        $(".home").click(function() {
+             $.scrollTo('.floor_1', 500);
+           $(".floor_2,.floor_5,.floor_6,.floor_7").css("padding-top",'0px');
+        });
+        $(".product").click(function() {
+          $.scrollTo('.floor_2', 500);
+              $(".floor_5,.floor_6,.floor_7").css("padding-top",'0px');
+            $(".floor_2").css("padding-top",'87px');
+        });
+        $(".awards").click(function() {
+            $.scrollTo('.floor_5', 500);
+            $(".floor_2,.floor_6,.floor_7").css("padding-top",'0px');
+            $(".floor_5").css("padding-top",'87px');
+        });
+        $(".about").click(function() {
+            $.scrollTo('.floor_6', 500);
+            $(".floor_2,.floor_5,.floor_7").css("padding-top",'0px');
+            $(".floor_6").css("padding-top",'87px');
+        });
+        $(".contact").click(function() {
+            $.scrollTo('.floor_7', 500);
+            $(".floor_2,.floor_5,.floor_6").css("padding-top",'0px');
+            $(".floor_7").css("padding-top",'87px');
+        });
 
-            //     $(".header").removeAttr(background);
-
-            // };
+        $(window).scroll(function() {
+            var sTop = $(document).scrollTop()+87;
+            var sHight = $('.floor_1').height();
+            if (sHight <=sTop ) {
+                // $(document).scrollTop(sHight);
+                // $(window).unbind("scroll");
+                $(".header").css('background',"#030303");
+            }else{
+                   $(".header").css('background',"transparent");
+            }
         });
 
 
@@ -353,10 +384,14 @@
         $("#more").slideToggle();
     };
 
-    // function scTop() {
-    //     $(document).scrollTop(597);
-    //     $(".header").css("background", "#030303");
-    // }
+    function scTop() {
+      
+          $.scrollTo('.floor_2', 500);
+            $(".floor_5,.floor_6,.floor_7").css("padding-top",'0px');
+            $(".floor_2").css("padding-top",'87px');
+       
+        
+    }
     </script>
 </body>
 

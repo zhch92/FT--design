@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <body>
+        <script type="text/javascript">
+        function click_scroll() {
+            var scroll_offset = $("#pos").offset(); //得到pos这个div层的offset，包含两个值，top和left
+            $("body,html").animate({
+                scrollTop: scroll_offset.top //让body的scrollTop等于pos的top，就实现了滚动
+            }, 0);
+        }
+        </script>
+        <input type="button" value="点击button跳转" onclick="click_scroll();" />... 这里是很多文字，把页面撑开，撑出滚动条 ...
+        <div id="pos">滚动到这里</div>
+        隐藏之后滚动到这里 ... 再加点文字 ...
+    </body>
+</body>
+
+</html>
