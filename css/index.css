@@ -109,10 +109,6 @@ dfn {
 * Address variable `h1` font-size and margin within `section` and `article`
 * contexts in Firefox 4+, Safari, and Chrome.
 */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
 /**
 * Address styling not present in IE 8/9.
 */
@@ -496,6 +492,7 @@ body {
   margin: 0 auto;
   width: 56px;
   height: 62px;
+  transition: all .3s;
 }
 .floor_2 .nav ul li .title_n {
   font-size: 18px;
@@ -529,6 +526,7 @@ body {
 .floor_2 #more {
   background: #000000;
   padding-bottom: 50px;
+  display: none;
 }
 .floor_2 #more ul {
   width: 1160px;
@@ -914,13 +912,14 @@ body {
 }
 .floor_6 {
   background: #1b1b1b;
-  height: 1485px;
+  height: 1330px;
 }
 .floor_6 h1 {
   font-size: 90px;
   color: #cb134b;
   padding-left: 98px;
-  margin-bottom: 40px;
+  padding-top: 70px;
+  margin: 0;
   z-index: 999;
 }
 .floor_6 .state {
@@ -1050,7 +1049,7 @@ body {
 .floor_7 {
   position: relative;
   width: 100%;
-  height: 1007px;
+  height: 1027px;
   overflow: hidden;
 }
 .floor_7 .bg {
@@ -1060,34 +1059,34 @@ body {
   left: 0;
   z-index: -1;
   width: 100%;
+  height: 100%;
   border: 0;
   display: block;
 }
-.floor_7 .contact {
-  position: relative;
-  margin: 0 auto;
-  width: 1200px;
-  height: 1215px;
-}
-.floor_7 .contact h1 {
+.floor_7 h1 {
   font-size: 90px;
   padding-top: 70px;
   color: #e40082;
   margin: 0;
   padding-left: 102px;
 }
+.floor_7 .contact {
+  position: relative;
+  margin: 0 auto;
+  width: 1200px;
+}
 .floor_7 .contact .sns {
   height: 115px;
   padding-left: 130px;
   position: absolute;
-  top: 760px;
-  left: 140px;
+  top: 592px;
+  left: 17%;
   background: url(../images/S.png) no-repeat left;
 }
 .floor_7 .contact dt {
   color: #a3a3a3;
   font-size: 24px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .floor_7 .contact dd {
   line-height: 20px;
@@ -1099,8 +1098,8 @@ body {
   padding-left: 130px;
   background: url(../images/E.png) no-repeat left;
   position: absolute;
-  left: 355px;
-  top: 625px;
+  left: 390px;
+  top: 457px;
 }
 .floor_7 .contact .adress {
   height: 115px;
@@ -1108,15 +1107,15 @@ body {
   background: url(../images/A.png) no-repeat left;
   position: absolute;
   left: 570px;
-  top: 490px;
+  top: 315px;
 }
 .floor_7 .contact .tell {
   height: 115px;
   padding-left: 130px;
   background: url(../images/M.png) no-repeat left;
   position: absolute;
-  left: 780px;
-  top: 355px;
+  left: 755px;
+  top: 187px;
 }
 .footer {
   width: 100%;
@@ -1129,7 +1128,8 @@ body {
 }
 .footer .foot p {
   text-align: center;
-  background: green;
+  color: #ffffff;
+  font-size: 14px;
 }
 @keyframes slide-left {
   0% {
@@ -1145,97 +1145,6 @@ body {
   }
   70% {
     opacity: .1;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .floor_2 #more ul {
-    width: 1160px;
-  }
-  .floor_2 #more ul li {
-    width: 255px;
-  }
-  .floor_4 .item_1 {
-    top: 0;
-    height: 745px;
-  }
-  .floor_4 .item_2 {
-    top: 0;
-    height: 373px;
-  }
-  .floor_4 .item_3 {
-    top: 0;
-    height: 373px;
-  }
-  .floor_4 .item_4 {
-    left: 33.3%;
-    height: 350px;
-  }
-  .floor_4 .item_5 {
-    left: 0;
-    height: 350px;
-  }
-  .floor_4 .item_6 {
-    left: 47%;
-    height: 350px;
-  }
-  .floor_4 .item_7 {
-    left: 66.6%;
-    height: 657px;
-  }
-  .floor_4 .item_8 {
-    left: 0;
-    height: 478px;
-  }
-  .floor_4 .item_9 {
-    top: 1048px;
-    height: 305px;
-  }
-  .floor_4 .item_10 {
-    top: 1048px;
-    height: 305px;
-  }
-  .floor_4 .item_11 {
-    top: 1524px;
-    height: 176px;
-  }
-  .floor_4 .item_12 {
-    top: 1049px;
-  }
-  .floor_4 .item_13 {
-    top: 1351px;
-    height: 350px;
-  }
-  .floor_4 .item_14 {
-    top: 1351px;
-    height: 350px;
-  }
-  .floor_4 .item_15 {
-    top: 1700px;
-    height: 175px;
-  }
-  .floor_4 .item_16 {
-    top: 1700px;
-    height: 350px;
-  }
-  .floor_4 .item_17 {
-    top: 1700px;
-    height: 175px;
-  }
-  .floor_4 .item_18 {
-    top: 1875px;
-    height: 175px;
-  }
-  .floor_4 .item_19 {
-    top: 1700px;
-    height: 350px;
-  }
-  .floor_4 .item_20 {
-    top: 1875px;
-    height: 175px;
-  }
-  .floor_4 .item_21 {
-    top: 1875px;
-    height: 175px;
   }
 }
 @media screen and (min-width: 960px) and (max-width: 1199px) {
@@ -1390,7 +1299,7 @@ body {
     height: 140px;
   }
   .floor_6 {
-    height: 1145px;
+    height: 1100px;
   }
   .floor_6 .item {
     width: 960px;
@@ -1456,6 +1365,55 @@ body {
   .floor_6 .company .li_4 {
     background: url(../images/city_4.png) no-repeat 10px 15px;
   }
+  .floor_7 {
+    height: 702px;
+  }
+  .floor_7 .contact {
+    width: 960px;
+    height: 702px;
+  }
+  .floor_7 .contact .sns {
+    height: 115px;
+    padding-left: 130px;
+    position: absolute;
+    top: 525px;
+    left: 200px;
+    background: url(../images/S_m.png) no-repeat left;
+  }
+  .floor_7 .contact dt {
+    color: #a3a3a3;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .floor_7 .contact dd {
+    line-height: 20px;
+    font-size: 15px;
+    color: #a3a3a3;
+  }
+  .floor_7 .contact .e-mail {
+    height: 115px;
+    padding-left: 130px;
+    background: url(../images/E.png) no-repeat left;
+    position: absolute;
+    top: 430px;
+    left: 390px;
+  }
+  .floor_7 .contact .adress {
+    height: 115px;
+    padding-left: 130px;
+    background: url(../images/A.png) no-repeat left;
+    position: absolute;
+    left: 570px;
+    top: 490px;
+  }
+  .floor_7 .contact .tell {
+    height: 115px;
+    padding-left: 130px;
+    background: url(../images/M.png) no-repeat left;
+    position: absolute;
+    left: 755px;
+    top: 350px;
+  }
   .footer .foot {
     width: 960px;
   }
@@ -1495,6 +1453,7 @@ body {
   .floor_2 #more {
     background: #000000;
     padding-bottom: 50px;
+    display: none;
   }
   .floor_2 #more ul {
     width: 780px;
@@ -1611,7 +1570,7 @@ body {
     width: 175px;
   }
   .floor_6 {
-    height: 1145px;
+    height: 1170px;
   }
   .floor_6 .item {
     width: 780px;
