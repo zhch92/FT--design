@@ -11,12 +11,28 @@
 	.box{
 		width: 100%;
 		margin: 0 auto;
+		
 	}
-
+	.box :hover .box1{
+opacity: .5;
+	}
+            .box1{
+            	position: absolute;
+            	/*display: none;*/
+            	opacity: 0;
+            	transition: all 1s;
+            	left: 0;
+            	top: 0;
+            	background: red;
+            	width: 100%;
+            	height: 100%;
+            	z-index: 1000;
+            }
 	.img{
 		width: 20%;
 		height: auto;
 		margin: 0 auto;
+		position: relative;
 	}
 
 	.inner{
@@ -34,7 +50,9 @@
 </head>
 <body>
 	<div class="box">
+	
 		<div class="img">
+		<div class="box1">sdsdsasss</div>
 			<div class="inner">
 				<img src="images/item_7.jpg" alt="">
 			</div>

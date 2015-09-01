@@ -31,14 +31,14 @@
             </div>
         </div>
     </div>
-    <div id="floor_1" class="floor_1">
-        <img class="bg" src="images/banner.jpg" alt="">
-        <p>DESIGN CHANGES IN LIEF</p>
-        <h1 class="logo_img"><img src="images/logo_img.png" alt=""></h1>
-        <h1 class="logo_font"><img src="images/logo_font.png" alt=""></h1>
-        <a class="down" href="javascript:void(0);" onclick="scTop()"></a>
-    </div>
-    <div class="floor_2">
+       <div id="floor_1" class="floor_1">
+        <div class="nav_show">
+            <img class="bg" src="images/banner.jpg" alt="">
+            <p class="title">DESIGN CHANGES IN LIEF</p>
+            <h1 class="logo_img"><img src="images/logo_img.png" alt=""></h1>
+            <h1 class="logo_font"><img src="images/logo_font.png" alt=""></h1>
+            <a class="down" href="javascript:void(0);" onclick="scTop()"></a>
+        </div>
         <div class="nav">
             <img class="bg" src="images/banner_1.jpg" alt="">
             <p class="title">WHAT WE CAN DO</p>
@@ -73,9 +73,11 @@
                     <p class="title_n">生产加工</p>
                     <p class="title_n_d">PRODUCTION PROCESSING</p>
                 </li>
+                <a class="more" href="javascript:void(0);" onclick="moreShow()">MORE</a>
             </ul>
-            <a class="more" href="javascript:void(0);" onclick="moreShow()">MORE</a>
         </div>
+    </div>
+    <div class="floor_2">
         <div id="more">
             <p class="title">OUR SERVICE</p>
             <ul class="clearfix">
@@ -113,7 +115,6 @@
         </div>
     </div>
     <div class="floor_3 flexslider" id="b04">
-        <a href="#" name="product"></a>
         <ul class="slides clearfix">
             <li>
                 <img class="bg" src="images/banner.jpg" alt="">
@@ -129,28 +130,157 @@
             </li>
         </ul>
     </div>
-    <div class="floor_4">
-        <div class="item item_1"  onclick="productShow('0','item_1','873px')"><img src="images/item_1.jpg" alt=""></div>
-        <div class="item item_2" onclick="productShow('0','item_1','873px')"><img src="images/item_2.jpg" alt=""></div>
-        <div class="item item_3"  onclick="productShow('0','item_1','873px')"><img src="images/item_3.jpg" alt=""></div>
-        <div class="item item_4"  onclick="productShow('0','item_1','+=873px')"><img src="images/item_4.jpg" alt=""></div>
-        <div class="item item_5"  onclick="productShow('1','item_4','+=873px')"><img src="images/item_5.jpg" alt=""></div>
-        <div class="item item_6"><img src="images/item_6.jpg" alt=""></div>
-        <div class="item item_7"><img src="images/item_7.jpg" alt=""></div>
-        <div class="item item_8"><img src="images/item_8.jpg" alt=""></div>
-        <div class="item item_9"><img src="images/item_9.jpg" alt=""></div>
-        <div class="item item_10"><img src="images/item_10.jpg" alt=""></div>
-        <div class="item item_13"><img src="images/item_13.jpg" alt=""></div>
-        <div class="item item_14"><img src="images/item_14.jpg" alt=""></div>
-        <div class="item item_11"><img src="images/item_11.jpg" alt=""></div>
-        <div class="item item_15"><img src="images/item_15.jpg" alt=""></div>
-        <!-- <div class="item item_12"><img src="images/item_12.jpg" alt=""></div> -->
-        <div class="item item_16"><img src="images/item_16.jpg" alt=""></div>
-        <div class="item item_17"><img src="images/item_17.jpg" alt=""></div>
-        <div class="item item_18"><img src="images/item_18.jpg" alt=""></div>
-        <div class="item item_19"><img src="images/item_19.jpg" alt=""></div>
-        <div class="item item_20"><img src="images/item_20.jpg" alt=""></div>
-        <div class="item item_21"><img src="images/item_21.jpg" alt=""></div>
+      <div class="floor_4">
+        <div class="product_show_1 clearfix">
+            <div class="show_lside" onclick="productShow('0')">
+                <div class="box">
+                    <p>这是一些介绍</p>
+                </div>
+                <div class="inner"><img src="images/item_1.jpg" alt=""></div>
+            </div>
+            <div class="show_rside">
+                <div class="rside_top">
+                    <ul class="clearfix">
+                        <li>
+                            <div class="box">
+                                <p>这是一些介绍</p>
+                            </div>
+                            <div class="inner"><img src="images/item_2.jpg" alt=""></div>
+                            <li>
+                                <li>
+                                    <div class="box">
+                                        <p>这是一些介绍</p>
+                                    </div>
+                                    <div class="inner"><img src="images/item_3.jpg" alt=""></div>
+                                    <li>
+                    </ul>
+                </div>
+                <div class="rside_dw"  onclick="productShow('1')">
+                    <div class="box">
+                        <p>这是一些介绍</p>
+                    </div>
+                    <div class="inner"><img src="images/item_4.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="product_show_2 clearfix">
+            <div class="show_lside"  onclick="productShow('1')">
+                <ul class="clearfix">
+                    <li class="li_1">
+                        <div class="box">
+                            <p>这是一些介绍</p>
+                        </div>
+                        <div class="inner"><img src="images/item_5.jpg" alt=""></div>
+                    </li>
+                    <li class="li_2">
+                        <div class="box">
+                            <p>这是一些介绍</p>
+                        </div>
+                        <div class="inner"><img src="images/item_6.jpg" alt=""></div>
+                    </li>
+                    <li class="li_3">
+                        <div class="box">
+                            <p>这是一些介绍</p>
+                        </div>
+                        <div class="inner"><img src="images/item_8.jpg" alt=""></div>
+                    </li>
+                    <li class="li_3">
+                        <div class="box">
+                            <p>这是一些介绍</p>
+                        </div>
+                        <div class="inner"><img src="images/item_9.jpg" alt=""></div>
+                    </li>
+                    <li class="li_4">
+                        <div class="box">
+                            <p>这是一些介绍</p>
+                        </div>
+                        <div class="inner"><img src="images/item_10.jpg" alt=""></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="show_rside">
+                <div class="box">
+                    <p>这是一些介绍</p>
+                </div>
+                <div class="inner"><img src="images/item_7.jpg" alt=""></div>
+            </div>
+        </div>
+        <div class="product_show_3">
+            <ul class="clearfix">
+                <li class="li_1">
+                    <div class="box">
+                        <p>这是一些介绍</p>
+                    </div>
+                    <div class="inner"><img src="images/item_11.jpg" alt=""></div>
+                </li>
+                <li class="li_2">
+                    <div class="box">
+                        <p>这是一些介绍</p>
+                    </div>
+                    <div class="inner"><img src="images/item_10.jpg" alt=""></div>
+                </li>
+                <li class="li_3">
+                    <div class="box">
+                        <p>这是一些介绍</p>
+                    </div>
+                    <div class="inner"><img src="images/item_14.jpg" alt=""></div>
+                </li>
+            </ul>
+        </div>
+        <div class="product_show_4 clearfix">
+            <div class="show_lside">
+                <div class="lside_top">
+                    <div class="box">
+                        <p>这是一些介绍</p>
+                    </div>
+                    <div class="inner"><img src="images/item_15.jpg" alt=""></div>
+                </div>
+                <div class="lside_dw">
+                    <ul class="clearfix">
+                        <li>
+                            <div class="box">
+                                <p>这是一些介绍</p>
+                            </div>
+                            <div class="inner"><img src="images/item_20.jpg" alt=""></div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <p>这是一些介绍</p>
+                            </div>
+                            <div class="inner"><img src="images/item_21.jpg" alt=""></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="show_m_1">
+                <div class="box">
+                    <p>这是一些介绍</p>
+                </div>
+                <div class="inner"><img src="images/item_16.jpg" alt=""></div>
+            </div>
+            <div class="show_m_2">
+                <ul>
+                    <li>
+                        <div class="box">
+                            <p>这是一些介绍</p>
+                        </div>
+                        <div class="inner"><img src="images/item_17.jpg" alt=""></div>
+                    </li>
+                    <li>
+                        <div class="box">
+                            <p>这是一些介绍</p>
+                        </div>
+                        <div class="inner"><img src="images/item_18.jpg" alt=""></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="show_rside">
+                <div class="box">
+                    <p>这是一些介绍</p>
+                </div>
+                <div class="inner"><img src="images/item_19.jpg" alt=""></div>
+            </div>
+        </div>
     </div>
     <div class="floor_5">
         <img src="images/banner_3.jpg" alt="" class="bg">
@@ -328,9 +458,9 @@
             </div>
         </div>
     </div>
-    <div class="product_spread"><div class="spread_content "><div class="clearfix">
+    <!-- <div class="product_spread"><div class="spread_content "><div class="clearfix">
             <h1>PRODUCT</h1><div class="explain"><p class="title">SDFDSFF</p><p class="introduce">KDJSFJOSDOFIJDSOJFODSO      OJDFOGIJDODFJGDFIG   DJSOGISDSDVDSVFDS</p></div></div>
-            <div class="product_show"><a class="cancel" href="javascript:void(0);"></a><a class="pre" href="javascript:void(0);"></a><a class="next" href="javascript:void(0);"></a><img src="images/product.jpg" alt=""></div></div></div>
+            <div class="product_show"><a class="cancel" href="javascript:void(0);"></a><a class="pre" href="javascript:void(0);"></a><a class="next" href="javascript:void(0);"></a><img src="images/product.jpg" alt=""></div></div></div> -->
     <div class="footer">
         <div class="foot">
             <p>xxxxxxxxxxxxxxxxxxxx</p>
