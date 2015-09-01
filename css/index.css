@@ -57,30 +57,19 @@ body {
 .floor_1 {
   position: relative;
   width: 100%;
-  height: 100%;
   z-index: 0;
 }
 .floor_1 .nav_show {
-  height: 75%;
+  height: 100%;
   width: 100%;
   position: relative;
-}
-.floor_1 .nav_show .bg {
-  vertical-align: top;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
+  background: url(../images/banner.jpg) no-repeat;
+  background-size: 100% 100%;
 }
 .floor_1 .nav_show .title {
   text-align: center;
   padding-top: 185px;
   color: #b6b7ba;
-  margin-bottom: 85px;
   position: relative;
   animation: slide-left 0.5s;
   font-weight: normal;
@@ -106,20 +95,9 @@ body {
 }
 .floor_1 .nav {
   position: relative;
-  height: 28%;
   width: 100%;
-  padding-bottom: 20px;
-}
-.floor_1 .nav .bg {
-  vertical-align: top;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 72%;
-  border: 0;
-  display: block;
+  padding-bottom: 60px;
+  background: url(../images/banner_1.jpg) center;
 }
 .floor_1 .nav .title {
   padding-top: 15px;
@@ -129,14 +107,13 @@ body {
   line-height: 58px;
 }
 .floor_1 .nav ul {
-  width: 1290px;
+  width: 1200px;
   position: relative;
   margin: 0 auto;
-  height: 27%;
 }
 .floor_1 .nav ul li {
   float: left;
-  width: 215px;
+  width: 200px;
 }
 .floor_1 .nav ul li:hover .img {
   transform: scale(1.1, 1.1);
@@ -164,7 +141,7 @@ body {
 }
 .floor_1 .nav ul .more {
   position: absolute;
-  bottom: -100px;
+  bottom: -57px;
   right: -35px;
   padding-top: 15px;
   padding-bottom: 10px;
@@ -768,25 +745,27 @@ body {
   color: #cb134b;
   margin: 0;
   padding-left: 102px;
+  font-weight: 200;
 }
-.floor_5 h2 {
+.floor_5 .title_1 {
   color: #3f3f3f;
-  font-size: 72px;
+  font-size: 60px;
   padding-left: 102px;
+  font-weight: 200;
 }
 .floor_5 .awards {
   margin-top: 120px;
 }
 .floor_5 .awards ul {
-  width: 870px;
+  width: 1060px;
+  position: relative;
   margin: 0 auto;
 }
 .floor_5 .awards ul li {
   position: relative;
-  width: 195px;
+  width: 180px;
   float: left;
-  margin: 0 10px;
-  transition: all 0.2s linear;
+  margin: 0 42px;
 }
 .floor_5 .awards ul li .img {
   width: 175px;
@@ -798,7 +777,7 @@ body {
 }
 .floor_6 {
   background: #1b1b1b;
-  height: 1330px;
+  height: 1360px;
 }
 .floor_6 h1 {
   font-size: 90px;
@@ -807,6 +786,7 @@ body {
   padding-top: 70px;
   margin: 0;
   z-index: 999;
+  font-weight: 200;
 }
 .floor_6 .state {
   padding-left: 98px;
@@ -956,6 +936,7 @@ body {
   color: #cb134b;
   margin: 0;
   padding-left: 102px;
+  font-weight: 200;
 }
 .floor_7 .contact {
   position: relative;
@@ -1449,7 +1430,6 @@ body {
   background: #333333;
   width: 100%;
   padding-top: 35px;
-  padding-bottom: 70px;
   overflow: hidden;
 }
 .product_spread .spread_content {
