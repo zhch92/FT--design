@@ -111,7 +111,7 @@ body {
         // min-height: 260px;
         width: 100%;
         padding-bottom: 60px;
-        background: url(../images/banner_1.jpg) center ;
+        background: url(../images/banner_1.jpg) center;
         // .bg {
         //     vertical-align: top;
         //     position: absolute;
@@ -430,7 +430,6 @@ body {
         }
     }
 }
-
 
 .floor_4 {
     @pencent3: 33.33%;
@@ -777,6 +776,7 @@ body {
         }
     }
 }
+
 .floor_5 {
     // padding-top: 64px;
     position: relative;
@@ -811,8 +811,8 @@ body {
         margin-top: 120px;
         ul {
             width: 1060px;
-          position: relative;
-          margin: 0 auto;
+            position: relative;
+            margin: 0 auto;
             li {
                 position: relative;
                 width: 180px;
@@ -865,7 +865,7 @@ body {
         a {
             color: #cb134b;
             margin-left: 25px;
-            text-decoration: none;
+            text-decoration: underline;
             font-weight: normal;
         }
     }
@@ -873,32 +873,8 @@ body {
         margin: 0 auto;
         width: 1040px;
         height: 995px;
-        overflow: hidden;
+        // overflow: hidden;
         position: relative;
-        .ul_1 {
-            top: 0px;
-            left: 0px;
-        }
-        .ul_2 {
-            top: 145px;
-            left: 20%;
-        }
-        .ul_3 {
-            top: -220px;
-            left: 420px;
-        }
-        .ul_4 {
-            top: -180px;
-            left: 630px;
-        }
-        .ul_5 {
-            top: 0px;
-            left: 840px;
-        }
-        .ul_6 {
-            top: 170px;
-            left: 1050px;
-        }
         ul {
             position: absolute;
             li {
@@ -936,6 +912,95 @@ body {
                     }
                 }
             }
+        }
+        .ul_lside_1 {
+            height: 0;
+            top: 0;
+            overflow: hidden;
+            left: -400px;
+            li{
+                width: 190px;
+            }
+            li:first-child {
+                height: 145px;
+            }
+            li:first-child {
+                height: 50px;
+            }
+        }
+        .ul_lside {
+            height: 0;
+            top: 0;
+            overflow: hidden;
+            left: -200px;
+            li{
+                 width: 190px;
+            }
+            li:first-child {
+                height: 145px;
+            }
+            li:first-child {
+                height: 100px;
+            }
+        }
+        .ul_rside {
+            height: 0;
+            top: 0;
+            overflow: hidden;
+            left: 1055px;
+            li{
+                 width: 190px;
+            }
+            li:first-child {
+                height: 200px;
+            }
+            li:last-child {
+                height: 188px;
+            }
+        }
+        .ul_rside_1 {
+            height: 0;
+            top: 0;
+            overflow: hidden;
+            left: 1255px;
+            li{
+                 width: 190px;
+            }
+            li:first-child {
+                height: 290px;
+            }
+            li:last-child {
+                height: 100px;
+            }
+        }
+        .ul_1 {
+            top: 0px;
+            left: 0px;
+        }
+        .ul_2 {
+            li:first-child {
+                height: 200px;
+            }
+            left: 210px;
+                li:last-child {
+                height: 150px;
+            }
+        }
+        .ul_3 {
+            li:first-child {
+                height: 70px;
+            }
+            left: 420px;
+        }
+        .ul_4 {
+            li:first-child {
+                height: 110px;
+            }
+            left: 630px;
+        }
+        .ul_5 {
+            top: 0px;
+            left: 840px;
         }
         .li_1 {
             height: 875px;
@@ -1091,7 +1156,6 @@ body {
 
 @media screen and (min-width: 960px) and (max-width: 1199px) {
     .floor_1 {
-
         .nav_show {
             .title {
                 padding-top: 150px;
@@ -1178,7 +1242,6 @@ body {
             }
         }
     }
-
     .floor_6 {
         height: 1100px;
         .item {
@@ -1306,14 +1369,15 @@ body {
 }
 
 @media screen and (min-width: 768px) and (max-width: 959px) {
-    .floor_1{
+    .floor_1 {
         .nav {
             ul {
                 width: 840px;
                 margin: 0 auto;
                 li {
                     float: left;
-                    width: 140px;background:red;
+                    width: 140px;
+                    background: red;
                     &:hover .img {
                         transform: scale(1.1, 1.1);
                     }
@@ -1348,7 +1412,8 @@ body {
                 margin: 0 auto;
                 li {
                     float: left;
-                    width: 140px;background:red;
+                    width: 140px;
+                    background: red;
                     &:hover .img {
                         transform: scale(1.1, 1.1);
                     }
@@ -1516,14 +1581,50 @@ body {
 @media only screen and (min-width: 480px) and (max-width: 767px) {}
 
 @media only screen and (max-width: 479px) {}
-@media  only screen and(max-width: 1920px) {
-    .floor_7{
-        .contact{
-        .sns {
+
+@media only screen and(min-width: 1920px) {
+    .floor_1 {
+        position: relative;
+        width: 100%;
+        // min-height: 635px;
+        height: 100%;
+        z-index: 0;
+        .nav_show {
+            height: 72%;
+        }
+        .nav {
+            position: relative;
+            height: 28%;
+            ul {
+                .more {
+                    bottom: -75px;
+                }
+            }
+        }
+    }
+    .floor_6 {
+        .item {
+            .ul_lside_1 {
+                height: auto;
+            }
+            .ul_lside {
+                height: auto;
+            }
+            .ul_rside {
+                height: auto;
+            }
+            .ul_rside_1 {
+                height: auto;
+            }
+        }
+    }
+    .floor_7 {
+        .contact {
+            .sns {
                 top: 625px;
                 left: 35px;
             }
-        .e-mail {
+            .e-mail {
                 top: 460px;
                 left: 295px;
             }
@@ -1533,7 +1634,7 @@ body {
             }
             .tell {
                 left: 815px;
-                top:135px;
+                top: 135px;
             }
         }
     }
@@ -1544,7 +1645,7 @@ body {
     width: 100%;
     padding-top: 35px;
     // padding-bottom: 70px;
-    // height: 0;
+    height: 0;
     overflow: hidden;
     // position: absolute;
     // left: 0;

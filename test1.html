@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.min.js"></script>
+	<style>
+li{
+	width: 300px;
+	height: 300px;
+	background:url();
+}
+
+	</style>
+</head>
+<body>
+<ul>
+
+</ul>	
+<div class=""></div>
+<script>
+var arrUrl = ['http://img10.360buyimg.com/da/jfs/t682/70/386462483/61160/815df73/546373b5Ne38dde92.jpg','images/item_2.jpg','images/item_3.jpg','images/item_4.jpg','images/item_5.jpg','images/item_6.jpg']
+for (var i = 0; i < arrUrl.length; i++) {
+	$("ul").append("<li>"+i+"</li>");
+	var src=arrUrl [i];
+	$("li").eq(i).css('background','url('+src+')');
+};
+</script>
+</body>
+</html>
