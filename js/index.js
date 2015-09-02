@@ -63,8 +63,8 @@ function moreShow() {
 };
 
 function scTop() {
-    $(".floor_2,.floor_5,.floor_6,.floor_7").css("padding-top", '0px');
-    $(".floor_2").css("padding-top", '87px');
+    // $(".floor_2,.floor_5,.floor_6,.floor_7").css("padding-top", '0px');
+    // $(".floor_2").css("padding-top", '87px');
     $.scrollTo('.floor_2', 500);
 };
 
@@ -73,12 +73,14 @@ removeShow();
     var pdt = '<div class=\"product_spread\"><div class=\"spread_content \"><div class=\"clearfix\"><h1>PRODUCT</h1><div class=\"explain\"><p class=\"title\">SDFDSFF</p><p class=\"introduce\">KDJSFJOSDOFIJDSOJFODSO      OJDFOGIJDODFJGDFIG   DJSOGISDSDVDSVFDS</p></div></div><div class=\"product_show\"><a class=\"cancel\" href=\"javascript:void(0);\" onclick=\"removeShow()\"></a><a class=\"pre\" href=\"javascript:void(0);\"></a><a class=\"next\" href=\"javascript:void(0);\"></a><img src=\"images/product.jpg\" alt=\"\"></div></div></div>';
     if (val==0) {
         $('.product_show_1').before(pdt);
+$('.product_spread').css('height',"0px;");
         $('.product_spread').animate({
             height: '884px'
         }, 1000)
     };
       if (val==1) {
         $('.product_show_2').before(pdt);
+        $('.product_spread').css('height',"0px;");
         $('.product_spread').animate({
             height: '884px'
         }, 1000)
