@@ -3,29 +3,40 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<script src="js/jquery.min.js"></script>
 	<style>
-li{
-	width: 300px;
-	height: 300px;
-	background:url();
+	.box11{
+		width: 300px;
+		height: 500px;
+	}
+	.box{
+		width: 300px;
+		background: red;
+		height: 100%;
+	}
+.box:before{
+content: "我是那个备胎元素";
+display: inline-block;
+vertical-align: middle;
+width: 0;
+height: 100%;
+font-size: 0;
+margin-left: -10px;
+}
+.text{
+display: inline-block;
+font-size:16px;
+vertical-align: middle;/* 保证文字垂直居中 */
 }
 
 	</style>
 </head>
 <body>
-<ul>
-
-</ul>	
-<div class=""></div>
-<script>
-var arrUrl = ['http://img10.360buyimg.com/da/jfs/t682/70/386462483/61160/815df73/546373b5Ne38dde92.jpg','images/item_2.jpg','images/item_3.jpg','images/item_4.jpg','images/item_5.jpg','images/item_6.jpg'],
-var jon={"status": true,"message": "contact info","result": [{"Phone": [{"Address": "北京","Name": "陈先生","Tel": "+86 18910163971","Link": ""}, {"Address": "北京","Name": "陈先生","Tel": "+86 18910163971","Link": ""}, {"Address": "北京","Name": "陈先生","Tel": "+86 18910163971","Link": ""}, {"Address": "北京","Name": "陈先生","Tel": "+86 18910163971","Link": ""}],"Address": [{"Address": "北京","Detail": "北京市朝阳区酒仙桥东路10号冠捷北京Madnet二层","Link": ""}, {"Address": "北京","Name": "陈先生","Link": ""}, {"Address": "北京","Name": "陈先生","Link": ""}, {"Address": "北京","Name": "陈先生","Link": ""}],"Email": [{"Address": "2352435@qq.com","Name": "陈欢","Link": ""}, {"Address": "2352435@qq.com","Name": "陈欢","Link": ""}, {"Address": "2352435@qq.com","Name": "陈欢","Link": ""}, {"Address": "2352435@qq.com","Name": "陈欢","Link": ""}],"SNS": [{"Content": "afasdf233443","Name": "陈欢","Link": "http://weibo.com"}, {"Content": "fasdf4235234","Name": "陈欢","Link": ""}, {"Content": "fasdf4234","Name": "陈欢","Link": ""}, {"Content": "fasdfas3423","Name": "陈欢","Link": ""}]}]};
-for (var i = 0; i < arrUrl.length; i++) {
-	$("ul").append("<li>"+i+"</li>");
-	var src=arrUrl [i];
-	$("li").eq(i).css('background','url('+src+')');
-};
-</script>
+<div class="box11">
+<div class="box">
+<p class="text">
+多行文本未知高度垂直居中-by 一丝多行文本未知高度垂直居中-by 一丝多行文本未知高度垂直居中-by 一丝
+</p>
+</div>
+	</div>
 </body>
 </html>
