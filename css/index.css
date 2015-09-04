@@ -942,7 +942,7 @@ body {
   height: 200px;
 }
 .floor_6 .item .ul_2 li:last-child {
-  height: 150px;
+  height: 100px;
 }
 .floor_6 .item .ul_3 {
   left: 420px;
@@ -984,9 +984,15 @@ body {
 }
 .floor_6 .company li i {
   font-size: 16px;
+<<<<<<< HEAD
   position: absolute;
   right: 5px;
+=======
+>>>>>>> b9e4eafa140acaaff3270cada95b56eb66bcd8a1
   font-style: normal;
+  position: absolute;
+  right: 3px;
+  top: 23px;
 }
 .floor_6 .company .li_1 {
   background: url(../images/city_1.png) no-repeat 20px 15px;

@@ -31,6 +31,7 @@ vertical-align: middle;/* 保证文字垂直居中 */
 	</style>
 </head>
 <body>
+<<<<<<< HEAD
 <div class="box11">
 <div class="box">
 <p class="text">
@@ -38,5 +39,33 @@ vertical-align: middle;/* 保证文字垂直居中 */
 </p>
 </div>
 	</div>
+=======
+<ul>
+
+</ul>	
+<div class="text"></div>
+<script>
+// var arrUrl = ['images/item_1.jpg','images/item_2.jpg','images/item_3.jpg','images/item_4.jpg','images/item_5.jpg','images/item_6.jpg'];
+var question = {
+    "status": true,
+    "message": "contact info",
+    "result": [{ "Phone": [{"Address": "北京","Name": "陈先生", "Tel": "+86 18910163971","Link": "" }, {"Address": "北京","Name": "陈先生","Tel": "+86 18910163971","Link": ""}, {"Address": "北京","Name": "陈先生","Tel": "+86 18910163931","Link": ""}, {"Address": "北京","Name": "陈先生","Tel": "+86 18910163971","Link": ""}],"Address": [{"Address": "北京","Detail": "北京市朝阳区酒仙桥东路10号冠捷北京Madnet二层","Link": ""}, {"Address": "北京","Detail": "宝安区松岗街潭头第三工业区B6栋1楼","Link": ""}, {"Address": "北京","Name": "陈先生","Link": ""}, {"Address": "北京","Name": "陈先生","Link": ""}],"Email": [{"Address": "2352435@qq.com","Name": "陈欢","Link": ""}, {"Address": "2352435@qq.com","Name": "陈欢","Link": ""}, {"Address": "2352435@qq.com","Name": "陈欢","Link": ""}, {"Address": "2352435@qq.com","Name": "陈欢","Link": ""}],"SNS": [{"Content": "afasdf233443","Name": "陈欢","Link": "http://weibo.com"}, {"Content": "fasdf4235234","Name": "陈欢","Link": ""}, {"Content": "fasdf4234","Name": "陈欢","Link": ""}, {"Content": "fasdfas3423","Name": "陈欢","Link": ""}]
+    }]
+}
+ // for (var i = 0; i < arrUrl.length; i++) {
+ // 	$("ul").append("<li>"+i+"</li>");
+ // 	var src=arrUrl [i];
+ // 	$("li").eq(i).css('background','url('+src+')');
+ // };
+ var xx=question.result[0].Phone;
+ var xxx=question.result[0].Address;
+ for (var i = 0; i < xx.length; i++) {
+ 	$(".text").append("<span>"+xx[i].Address+"----"+xx[i].Name+"----"+xx[i].Tel+"</span>"+"<br>")
+ };
+ for (var i = 0; i < xxx.length; i++) {
+ 	$(".text").append("<span>"+xxx[i].Address+"----"+xxx[i].Detail+"----"+xxx[i].Link+"</span>"+"<br>")
+ };
+</script>
+>>>>>>> b9e4eafa140acaaff3270cada95b56eb66bcd8a1
 </body>
 </html>
