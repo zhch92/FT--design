@@ -984,11 +984,7 @@ body {
 }
 .floor_6 .company li i {
   font-size: 16px;
-<<<<<<< HEAD
-  position: absolute;
   right: 5px;
-=======
->>>>>>> b9e4eafa140acaaff3270cada95b56eb66bcd8a1
   font-style: normal;
   position: absolute;
   right: 3px;
@@ -1008,7 +1004,6 @@ body {
 }
 .floor_7 {
   position: relative;
-  width: 100%;
   height: 1027px;
   overflow: hidden;
   background: url(../images/banner_4.jpg) center no-repeat;
@@ -1041,8 +1036,8 @@ body {
   height: 115px;
   padding-left: 130px;
   position: absolute;
-  top: 625px;
-  left: 35px;
+  top: 640px;
+  left: 26px;
   background: url(../images/S.png) no-repeat left;
 }
 .floor_7 .contact dt {
@@ -1060,24 +1055,24 @@ body {
   padding-left: 130px;
   background: url(../images/E.png) no-repeat left;
   position: absolute;
-  left: 295px;
-  top: 460px;
+  left: 286px;
+  top: 480px;
 }
 .floor_7 .contact .adress {
   height: 115px;
   padding-left: 130px;
   background: url(../images/A.png) no-repeat left;
   position: absolute;
-  left: 555px;
-  top: 300px;
+  left: 544px;
+  top: 314px;
 }
 .floor_7 .contact .tell {
   height: 115px;
   padding-left: 130px;
   background: url(../images/M.png) no-repeat left;
   position: absolute;
-  left: 815px;
-  top: 135px;
+  left: 804px;
+  top: 150px;
 }
 .footer {
   width: 100%;
@@ -1209,22 +1204,6 @@ body {
   }
   .floor_6 .item .ul_rside_1 {
     height: auto;
-  }
-  .floor_7 .contact .sns {
-    top: 625px;
-    left: 35px;
-  }
-  .floor_7 .contact .e-mail {
-    top: 460px;
-    left: 295px;
-  }
-  .floor_7 .contact .adress {
-    left: 555px;
-    top: 295px;
-  }
-  .floor_7 .contact .tell {
-    left: 815px;
-    top: 135px;
   }
 }
 @media screen and (min-width: 960px) and (max-width: 1199px) {
@@ -1380,8 +1359,8 @@ body {
     background: url(../images/city_4.png) no-repeat 10px 15px;
   }
   .floor_7 {
-    height: 600px;
-    background-size: 100%;
+    height: 755px;
+    background-size: 1200px auto;
   }
   .floor_7 h1 {
     padding-top: 30px;
@@ -1403,34 +1382,30 @@ body {
   .floor_7 .contact .sns {
     height: 80px;
     padding-left: 100px;
-    position: absolute;
-    top: 330px;
-    left: 170px;
+    top: 442px;
+    left: 154px;
     background: url(../images/S_m.png) no-repeat left;
   }
   .floor_7 .contact .e-mail {
     height: 80px;
     padding-left: 100px;
     background: url(../images/E_m.png) no-repeat left;
-    position: absolute;
-    top: 235px;
-    left: 325px;
+    top: 338px;
+    left: 315px;
   }
   .floor_7 .contact .adress {
     height: 80px;
     padding-left: 100px;
     background: url(../images/A_m.png) no-repeat left;
-    position: absolute;
-    top: 135px;
-    left: 495px;
+    top: 236px;
+    left: 478px;
   }
   .floor_7 .contact .tell {
     height: 80px;
     padding-left: 100px;
     background: url(../images/M_m.png) no-repeat left;
-    position: absolute;
-    top: 35px;
-    left: 650px;
+    top: 132px;
+    left: 641px;
   }
   .product_spread {
     padding-bottom: 40px;
@@ -1498,6 +1473,57 @@ body {
   }
   .footer .foot {
     width: 1024px;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+  .floor_7 {
+    height: 625px;
+    background-size: 1000px auto;
+  }
+  .floor_7 h1 {
+    padding-top: 30px;
+  }
+  .floor_7 .contact {
+    width: 800px;
+    height: 600px;
+  }
+  .floor_7 .contact dt {
+    color: #a3a3a3;
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+  .floor_7 .contact dd {
+    line-height: 15px;
+    font-size: 12px;
+    color: #a3a3a3;
+  }
+  .floor_7 .contact .sns {
+    height: 80px;
+    padding-left: 100px;
+    top: 344px;
+    left: 102px;
+    background: url(../images/S_m.png) no-repeat left;
+  }
+  .floor_7 .contact .e-mail {
+    height: 80px;
+    padding-left: 100px;
+    background: url(../images/E_m.png) no-repeat left;
+    top: 258px;
+    left: 236px;
+  }
+  .floor_7 .contact .adress {
+    height: 80px;
+    padding-left: 100px;
+    background: url(../images/A_m.png) no-repeat left;
+    top: 171px;
+    left: 370px;
+  }
+  .floor_7 .contact .tell {
+    height: 80px;
+    padding-left: 100px;
+    background: url(../images/M_m.png) no-repeat left;
+    top: 86px;
+    left: 506px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 959px) {
@@ -1691,60 +1717,6 @@ body {
   .floor_6 .company .li_4 {
     background: url(../images/city_4.png) no-repeat 0px 15px;
   }
-  .floor_7 {
-    height: 550px;
-    background-size: 100%;
-  }
-  .floor_7 h1 {
-    padding-top: 30px;
-    font-size: 60px;
-  }
-  .floor_7 .contact {
-    width: 1024px;
-    height: 600px;
-  }
-  .floor_7 .contact dt {
-    color: #a3a3a3;
-    font-size: 14px;
-    margin-bottom: 0px;
-  }
-  .floor_7 .contact dd {
-    line-height: 15px;
-    font-size: 12px;
-    color: #a3a3a3;
-  }
-  .floor_7 .contact .sns {
-    height: 60px;
-    padding-left: 70px;
-    position: absolute;
-    top: 310px;
-    left: 190px;
-    background: url(../images/S_s.png) no-repeat left;
-  }
-  .floor_7 .contact .e-mail {
-    height: 60px;
-    padding-left: 70px;
-    background: url(../images/E_s.png) no-repeat left;
-    position: absolute;
-    top: 235px;
-    left: 315px;
-  }
-  .floor_7 .contact .adress {
-    height: 60px;
-    padding-left: 70px;
-    background: url(../images/A_s.png) no-repeat left;
-    position: absolute;
-    top: 155px;
-    left: 430px;
-  }
-  .floor_7 .contact .tell {
-    height: 60px;
-    padding-left: 70px;
-    background: url(../images/M_s.png) no-repeat left;
-    position: absolute;
-    top: 75px;
-    left: 550px;
-  }
   .product_spread {
     padding-bottom: 40px;
   }
@@ -1813,3 +1785,104 @@ body {
     width: 840px;
   }
 }
+@media only screen and (min-width: 500px) and (max-width: 799px) {
+  .floor_7 {
+    height: 502px;
+    background-size: 800px auto;
+  }
+  .floor_7 h1 {
+    padding-top: 30px;
+    padding-left: 50px;
+    font-size: 45px;
+  }
+  .floor_7 .contact {
+    width: 500px;
+  }
+  .floor_7 .contact dt {
+    color: #a3a3a3;
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+  .floor_7 .contact dd {
+    line-height: 15px;
+    font-size: 12px;
+    color: #a3a3a3;
+  }
+  .floor_7 .contact .w-ele {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 15px 0;
+  }
+  .floor_7 .contact .sns {
+    height: 80px;
+    padding-left: 100px;
+    background: url(../images/S_m.png) no-repeat left;
+  }
+  .floor_7 .contact .e-mail {
+    height: 80px;
+    padding-left: 100px;
+    background: url(../images/E_m.png) no-repeat left;
+  }
+  .floor_7 .contact .adress {
+    height: 80px;
+    padding-left: 100px;
+    background: url(../images/A_m.png) no-repeat left;
+  }
+  .floor_7 .contact .tell {
+    height: 80px;
+    padding-left: 100px;
+    background: url(../images/M_m.png) no-repeat left;
+  }
+}
+@media only screen and (max-width: 499px) {
+  .floor_7 {
+    height: 450px;
+    background-size: 750px auto;
+  }
+  .floor_7 h1 {
+    padding-top: 30px;
+    padding-left: 20px;
+    font-size: 30px;
+  }
+  .floor_7 .contact {
+    width: 400px;
+  }
+  .floor_7 .contact dt {
+    color: #a3a3a3;
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+  .floor_7 .contact dd {
+    line-height: 15px;
+    font-size: 12px;
+    color: #a3a3a3;
+  }
+  .floor_7 .contact .w-ele {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 10px 0;
+  }
+  .floor_7 .contact .sns {
+    height: 80px;
+    padding-left: 100px;
+    background: url(../images/S_m.png) no-repeat left;
+  }
+  .floor_7 .contact .e-mail {
+    height: 80px;
+    padding-left: 100px;
+    background: url(../images/E_m.png) no-repeat left;
+  }
+  .floor_7 .contact .adress {
+    height: 80px;
+    padding-left: 100px;
+    background: url(../images/A_m.png) no-repeat left;
+  }
+  .floor_7 .contact .tell {
+    height: 80px;
+    padding-left: 100px;
+    background: url(../images/M_m.png) no-repeat left;
+  }
+}
+/*# sourceMappingURL=index.css.map */
