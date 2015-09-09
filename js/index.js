@@ -72,18 +72,35 @@ function scTop() {
 }
 
 function productShow(val) {
-	removeShow();
+	$('.product_spread').animate({height: '0px'}, 500);
+	$('.product_spread').remove();
 	var pdt = '<div class=\"product_spread\"><div class=\"spread_content \"><div class=\"clearfix\"><h1>PRODUCT</h1><div class=\"explain\"><p class=\"title\">SDFDSFF</p><p class=\"introduce\">KDJSFJOSDOFIJDSOJFODSO      OJDFOGIJDODFJGDFIG   DJSOGISDSDVDSVFDS</p></div></div><div class=\"product_show\"><a class=\"cancel\" href=\"javascript:void(0);\" onclick=\"removeShow()\"></a><a class=\"pre\" href=\"javascript:void(0);\"></a><a class=\"next\" href=\"javascript:void(0);\"></a><img src=\"images/product.jpg\" alt=\"\"></div></div></div>';
-	if (val === 0) {
+	if (val ==0) {	
 		$('.product_show_1').before(pdt);
-		$('.product_spread').css('height', "0px;");
 		$('.product_spread').animate({
 			height: '884px'
 		}, 1000);
 	}
-	if (val === 1) {
+	if (val ==1) {
 		$('.product_show_2').before(pdt);
-		$('.product_spread').css('height', "0px;");
+		$('.product_spread').animate({
+			height: '884px'
+		}, 1000);
+	}
+	if (val ==2) {
+		$('.product_show_2').after(pdt);
+		$('.product_spread').animate({
+			height: '884px'
+		}, 1000);
+	}
+	if (val ==3) {
+		$('.product_show_4').before(pdt);
+		$('.product_spread').animate({
+			height: '884px'
+		}, 1000);
+	}
+	if (val ==4) {
+		$('.product_show_4').after(pdt);
 		$('.product_spread').animate({
 			height: '884px'
 		}, 1000);
@@ -96,9 +113,7 @@ function removeShow() {
 	}, 500, function() {
 		$('.product_spread').remove();
 	});
-
 }
-
 function imgrequest() {
 	$.ajax({
 		url: "",
