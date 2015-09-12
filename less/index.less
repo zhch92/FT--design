@@ -1,11 +1,18 @@
+@charset "UTF-8";
+// reset
+
 * {
 		margin: 0;
 		padding: 0;
 }
 
-li {
+ul,li,
+dl,dt {
 		list-style: none;
 }
+
+
+// variables
 
 .clearfix {
 		zoom: 1;
@@ -17,12 +24,21 @@ li {
 		display: block;
 		content: '';
 }
-
+html{
+	-webkit-font-smoothing: antialiased;
+	font-size-adjust:none;
+	-webkit-font-size-adjust:none;
+}
 html,
 body {
 		height: 100%;
 		background: #030303;
-		font-family: '微软雅黑';
+		// 字体处理
+		font-family: arial, '微软雅黑', 'Microsoft YaHei';
+		font-stretch: normal;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: normal;
 }
 
 .header {
@@ -72,30 +88,28 @@ body {
 				height: 100%;
 				width: 100%;
 				position: relative;
-				background: url(../images/banner.jpg) no-repeat;
-				background-size: 100% 100%;
+				background: url(../images/banner.jpg) center no-repeat;
+				background-size: cover;
 				.title {
+						position: relative;
 						text-align: center;
-						// margin-top: 115px;
 						padding-top: 185px;
 						color: #b6b7ba;
-						// margin-bottom: 85px;
-						position: relative;
 						animation: slide-left .5s;
-						font-weight: 100;
+						font-weight: normal;
 						font-size: 40px;
-						font-family: 'Arial';
+						margin: 0;
 				}
-				h1 {
-						text-align: center;
-						position: relative;
-
+				h2 {
+					text-align: center;
+					position: relative;
 				}
 				.logo_img {
 						animation: slide-left 1s;
+						margin-top: 50px;
 				}
 				.logo_font {
-						margin-top: 50px;
+						margin-top: 20px;
 						animation: slide-left 1.5s;
 				}
 				.down {
@@ -111,7 +125,8 @@ body {
 				// height: 28%;
 				// min-height: 260px;
 				width: 100%;
-				padding-bottom: 60px;
+				// padding-bottom: 60px;
+				padding-bottom: 40px;
 				background: url(../images/banner_1.jpg) center;
 				background-size: 100% 100%;
 				// .bg {
@@ -131,6 +146,20 @@ body {
 						text-align: center;
 						font-size: 24px;
 						line-height: 58px;
+				}
+
+				.more {
+						position: absolute;
+						bottom: -40px;
+						cursor: pointer;
+						right: -50px;
+						padding-top: 15px;
+						padding-bottom: 10px;
+						color: #989898;
+						font-size: 12px;
+						text-decoration: none;
+						background: url(../images/more.png) center 0px no-repeat;
+						animation: breathe 3s infinite linear;
 				}
 				ul {
 						width: 1200px;
@@ -165,18 +194,6 @@ body {
 						}
 						.li_1 {
 								background: url(../images/nav_r.png) right 10px no-repeat;
-						}
-						.more {
-								position: absolute;
-								bottom: -57px;
-								right: -35px;
-								padding-top: 15px;
-								padding-bottom: 10px;
-								color: #989898;
-								font-size: 12px;
-								text-decoration: none;
-								background: url(../images/more.png) center 0px no-repeat;
-								animation: breathe 3s infinite linear;
 						}
 						.more_active {
 								background: url(../images/more_active.png) center 0px no-repeat;
@@ -269,8 +286,9 @@ body {
 						margin: 0 auto;
 						li {
 								float: left;
-								width: 255px;
-								margin: 0 17px;
+								width: 25%;
+								// width: 255px;
+								// margin: 0 17px;
 								&:hover {
 										transform: rotateY(360deg);
 										transition: all 2s;
@@ -316,6 +334,7 @@ body {
 						float: left;
 						width: 100%;
 						height: 626px;
+						background-size: 100% auto;
 						img {
 								width: 100%;
 								height: 626px;
@@ -1271,11 +1290,12 @@ body {
 				}
 				.nav {
 						position: relative;
-						height: 28%;
+						// height: 28%;
+						height: 200px;
 						ul {
-								.more {
-										bottom: -75px;
-								}
+							.more {
+									bottom: -55px;
+							}
 						}
 				}
 		}

@@ -61,8 +61,17 @@ function headChange(cls) {
 }
 
 function moreShow() {
+	var goalBox = $("#more");
+	var display = goalBox.css("display");
 	$(".floor_2 .more").toggleClass('more_active');
-	$("#more").slideToggle();
+	goalBox.slideToggle();
+	var wh = $(window).height();
+	var sT = $(window).scrollTop();
+	if (sT <= 350 && display === 'none') {
+		$('html,body').animate({
+			scrollTop: 350
+		});
+	}
 }
 
 function scTop() {
@@ -72,34 +81,37 @@ function scTop() {
 }
 
 function productShow(val) {
-	$('.product_spread').animate({height: '0px'}, 500);
+	val = parseInt(val);
+	$('.product_spread').animate({
+		height: '0px'
+	}, 500);
 	$('.product_spread').remove();
 	var pdt = '<div class=\"product_spread\"><div class=\"spread_content \"><div class=\"clearfix\"><h1>PRODUCT</h1><div class=\"explain\"><p class=\"title\">SDFDSFF</p><p class=\"introduce\">KDJSFJOSDOFIJDSOJFODSO      OJDFOGIJDODFJGDFIG   DJSOGISDSDVDSVFDS</p></div></div><div class=\"product_show\"><a class=\"cancel\" href=\"javascript:void(0);\" onclick=\"removeShow()\"></a><a class=\"pre\" href=\"javascript:void(0);\"></a><a class=\"next\" href=\"javascript:void(0);\"></a><img src=\"images/product.jpg\" alt=\"\"></div></div></div>';
-	if (val ==0) {	
+	if (val === 0) {
 		$('.product_show_1').before(pdt);
 		$('.product_spread').animate({
 			height: '884px'
 		}, 1000);
 	}
-	if (val ==1) {
+	if (val === 1) {
 		$('.product_show_2').before(pdt);
 		$('.product_spread').animate({
 			height: '884px'
 		}, 1000);
 	}
-	if (val ==2) {
+	if (val === 2) {
 		$('.product_show_2').after(pdt);
 		$('.product_spread').animate({
 			height: '884px'
 		}, 1000);
 	}
-	if (val ==3) {
+	if (val === 3) {
 		$('.product_show_4').before(pdt);
 		$('.product_spread').animate({
 			height: '884px'
 		}, 1000);
 	}
-	if (val ==4) {
+	if (val === 4) {
 		$('.product_show_4').after(pdt);
 		$('.product_spread').animate({
 			height: '884px'
@@ -114,6 +126,7 @@ function removeShow() {
 		$('.product_spread').remove();
 	});
 }
+
 function imgrequest() {
 	$.ajax({
 		url: "",
@@ -129,40 +142,36 @@ function imgrequest() {
 	});
 }
 
-var host="http://120.26.79.226:8000";//主机地址 阿里云
-var urlObj={
-	"webInfo":'/getData.php?action=query&name=webInfo',
-	"carousel":'/getData.php?action=query&name=carousel',
-	"product":'/getData.php?action=query&name=product',
-	"productDetail":'/getData.php?action=query&name=product',//要动态加上id
-	"team":'/getData.php?action=query&name=team',//获取团队信息
-	"contact":'/getData.php?action=query&name=contact'
+var host = "http://design.boyweb.cn"; //主机地址 阿里云
+var urlObj = {
+	"webInfo": '/getData.php?action=query&name=webInfo',
+	"carousel": '/getData.php?action=query&name=carousel',
+	"product": '/getData.php?action=query&name=product',
+	"productDetail": '/getData.php?action=query&name=product', //要动态加上id
+	"team": '/getData.php?action=query&name=team', //获取团队信息
+	"contact": '/getData.php?action=query&name=contact'
 };
 
 // 处理请求的数据
-function getData(url,callback){
+function getData(url, callback) {
 	$.ajax({
-		url:url,
-		type:"GET",
-		dataType:"JSON",
-		success:function(data){
+		url: url,
+		type: "GET",
+		dataType: "JSON",
+		success: function(data) {
 			console.log(data);
-			callback.call(this,data);
+			callback.call(this, data);
 		}
 	});
 }
 
 // 处理网页的基本信息
-function webInfo(){
-	var _url=host+urlObj['webInfo'];
-	getData(_url,function(data){
+function webInfo() {
+	var _url = host + urlObj.webInfo;
+	getData(_url, function(data) {
 		console.log(data);
 	});
 }
-
-
-
-
 
 
 // 执行动作

@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery.min.js"></script>
 </head>
 
 <body>
@@ -25,13 +26,13 @@
 		</div>
 	</div>
 	<div id="floor_1" class="floor_1">
-		<div class="nav_show">
-			<p class="title">DESIGN CHANGES IN LIEF</p>
-			<h1 class="logo_img"><img src="images/logo_img.png" alt=""></h1>
-			<h1 class="logo_font"><img src="images/logo_font.png" alt=""></h1>
+		<div id="headBg" class="nav_show">
+			<h1 class="title">DESIGN CHANGES IN LIEF</h1>
+			<h2 class="logo_img"><img src="images/logo_img.png" alt=""></h2>
+			<h2 class="logo_font"><img src="images/logo_font.png" alt=""></h2>
 			<a class="down" href="javascript:void(0);" onclick="scTop()"></a>
 		</div>
-		<div class="nav">
+		<div id="headNav" class="nav">
 			<!-- <img class="bg" src="images/banner_1.jpg" alt=""> -->
 			<p class="title">WHAT WE CAN DO</p>
 			<ul class="clearfix">
@@ -68,6 +69,31 @@
 				<a class="more" href="javascript:void(0);" onclick="moreShow()">MORE</a>
 			</ul>
 		</div>
+		<script type="text/javascript">
+			(function(){
+				function cal(){
+					var W=$(window);
+					var wh=W.height();
+					var bg=$("#headBg");
+					var nav=$("#headNav");
+					var h=wh-nav.outerHeight();
+					if(wh<800){
+						bg.attr('style','');
+						return;
+					}else{
+						bg.height(h);
+						$("html,body").animate({
+							scrollTop:0
+						});
+					}
+				}
+
+				cal();
+				$(window).resize(cal);
+
+
+			})();
+		</script>
 	</div>
 	<div class="floor_2">
 		<div id="more">
@@ -108,13 +134,13 @@
 	</div>
 	<div class="floor_3 flexslider" id="b04">
 		<ul class="slides clearfix">
-			<li style="background:url(images/banner.jpg)  50% 0 no-repeat;">
+			<li style="background:url(images/banner.jpg)  center no-repeat; background-size:100% auto;">
 			</li>
-			<li style="background:url(images/banner_2.jpg)  50% 0 no-repeat;">
+			<li style="background:url(images/banner_2.jpg)  center no-repeat; background-size:100% auto;">
 			</li>
-			<li style="background:url(images/banner_4.jpg)  50% 0 no-repeat;">
+			<li style="background:url(images/banner_4.jpg)  center no-repeat; background-size:100% auto;">
 			</li>
-			<li style="background:url(images/banner_2.jpg)  50% 0 no-repeat;">
+			<li style="background:url(images/banner_2.jpg)  center no-repeat; background-size:100% auto;">
 			</li>
 		</ul>
 	</div>
@@ -132,17 +158,13 @@
 					<ul class="clearfix">
 						<li  onclick="productShow('0')">
 							<div class="box">
-		
 								<p><span>标题</span><br>这是一些介绍</p>
-
 							</div>
 							<div class="inner"><img src="images/item_2.jpg" alt=""></div>
 							<li  onclick="productShow('0')">
 								<li>
 									<div class="box">
-				
 										<p><span>标题</span><br>这是一些介绍</p>
-
 									</div>
 									<div class="inner"><img src="images/item_3.jpg" alt=""></div>
 									<li>
@@ -506,7 +528,6 @@
 			<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
 		</div>
 	</div>
-	<script src="js/jquery.min.js"></script>
 	<script src="js/index.js"></script>
 	<script src="js/jquery.flexslider-min.js"></script>
 	<script type="text/javascript" src="js/jquery.scrollTo.js">
