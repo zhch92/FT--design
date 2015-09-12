@@ -1335,7 +1335,6 @@ body {
   background: #333333;
   width: 100%;
   padding-top: 35px;
-  height: 0;
   overflow: hidden;
 }
 .product_spread .spread_content {
@@ -2014,14 +2013,113 @@ body {
   }
 }
 @media only screen and (min-width: 500px) and (max-width: 799px) {
+  .header .head .logo {
+    width: 150px;
+  }
+  .header .head .logo img {
+    width: 100%;
+  }
+  .header .head .nav li {
+    margin-left: 25px;
+  }
+  .floor_1 .nav_show .title {
+    padding-top: 120px;
+    font-size: 24px;
+  }
+  .floor_1 .nav_show .logo_img img {
+    width: 90px;
+  }
+  .floor_1 .nav_show .logo_font img {
+    width: 150px;
+  }
+  .floor_1 .nav ul {
+    width: 600px;
+  }
+  .floor_1 .nav ul li .title_s,
+  .floor_1 .nav ul li .title_n_s {
+    margin-top: 3px;
+  }
+  .floor_1 .nav ul .li_1_s {
+    background: transparent;
+  }
+  .floor_1 .nav ul .li_s {
+    margin-top: 10px;
+  }
+  .floor_1 .nav ul .more {
+    font-size: 8px;
+    right: -9px;
+    bottom: -44px;
+  }
+  .floor_3 {
+    height: 468px;
+  }
+  .floor_3 li {
+    height: 468px;
+  }
+  .floor_5 {
+    height: 1000px;
+  }
+  .floor_5 h1 {
+    font-size: 20px;
+    padding-left: 5%;
+  }
+  .floor_5 .title_1 {
+    font-size: 18px;
+  }
+  .floor_5 .awards {
+    margin-top: 10px;
+  }
+  .floor_5 .awards ul {
+    width: 530px;
+  }
+  .floor_6 h1 {
+    font-size: 20px;
+    padding-left: 5%;
+  }
+  .floor_6 .state {
+    padding-left: 5%;
+  }
+  .floor_6 .item ul {
+    width: auto;
+  }
+  .floor_6 .item ul li {
+    width: 181px;
+  }
+  .floor_6 .item ul .li_s {
+    height: 0 !important;
+  }
+  .floor_6 .item .ul_4 {
+    left: 0;
+    top: 294px;
+  }
+  .floor_6 .item .ul_5 {
+    left: 210px;
+    top: 590px;
+  }
+  .floor_6 .company {
+    width: 650px;
+  }
+  .floor_6 .company ul li {
+    font-size: 12px;
+  }
+  .floor_6 .company ul li .city {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  .floor_6 .company ul .li_1 {
+    width: 160px;
+  }
+  .floor_6 .company ul .li_3 {
+    width: 160px;
+  }
   .floor_7 {
     height: 502px;
     background-size: 800px auto;
   }
   .floor_7 h1 {
     padding-top: 30px;
-    padding-left: 50px;
-    font-size: 45px;
+    padding-left: 5%;
+    font-size: 20px;
   }
   .floor_7 .contact {
     width: 500px;
@@ -2061,6 +2159,9 @@ body {
     height: 80px;
     padding-left: 100px;
     background: url(../images/M_m.png) no-repeat left;
+  }
+  .footer .foot {
+    width: 650px;
   }
 }
 @media only screen and (max-width: 499px) {
@@ -2113,4 +2214,3 @@ body {
     background: url(../images/M_m.png) no-repeat left;
   }
 }
-/*# sourceMappingURL=css/index.css.map */

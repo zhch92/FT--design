@@ -154,33 +154,35 @@ function productShow(val) {
 	if (val === 0) {
 		$('.product_show_1').before(pdt);
 		$('.product_spread').animate({
-			height: '884px'
+			height: pHeight
 		}, 1000);
 	}
 	if (val === 1) {
 		$('.product_show_2').before(pdt);
 		$('.product_spread').animate({
-			height: '884px'
+			height: pHeight
 		}, 1000);
 	}
 	if (val === 2) {
 		$('.product_show_2').after(pdt);
 		$('.product_spread').animate({
-			height: '884px'
+			height: pHeight
 		}, 1000);
 	}
 	if (val === 3) {
 		$('.product_show_4').before(pdt);
 		$('.product_spread').animate({
-			height: '884px'
+			height: pHeight
 		}, 1000);
 	}
 	if (val === 4) {
 		$('.product_show_4').after(pdt);
 		$('.product_spread').animate({
-			height: '884px'
+			height: pHeight
 		}, 1000);
 	}
+	var pHeight=$(".product_spread ").height();
+
 }
 
 function temDetail(data, callback) {
@@ -221,9 +223,8 @@ function removeDetail(){
 function removeShow() {
 	$('.product_spread').animate({
 		height: '0px'
-	}, 500, function() {
+	}, 500);
 		$('.product_spread').remove();
-	});
 }
 
 function imgrequest() {
