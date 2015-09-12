@@ -1,3 +1,17 @@
+// 处理请求的数据
+function getData(url, callback) {
+	$.ajax({
+		url: url,
+		type: "GET",
+		dataType: "JSON",
+		success: function(data) {
+			console.log(data);
+			callback.call(this, data);
+		}
+	});
+}
+
+
 $(document).ready(function() {
 	// 轮播============
 	$('.flexslider').flexslider({
@@ -54,6 +68,56 @@ $(document).ready(function() {
 		}
 	});
 
+	$("#productList .p-item").click(function(event) {
+
+		var $this = $(this);
+		var id = $this.attr('data-id'); //产品id
+		var pos = $this.attr('data-show-pos'); //显示的位置
+
+		var dataURL = '/getData.php?action=query&name=productDetail&id=' + id;
+
+		// 判断是否已经点击 显示了详情 是 就返回
+		var findB=$('.product-detail[data-id="'+id+'"]');
+		if(findB.length>0 || id===undefined || id===""){
+			removeDetail();
+			return;
+		}
+		function showBox($html) {
+			var posBox=$(".show-position-"+pos);
+			posBox.html('').html($html);//先清空 后放数据
+			posBox.addClass('show');
+			posBox.find(".product-detail").css('height','auto');
+
+			// 移动位置
+			var bt=posBox.offset().top;
+			var bh=posBox.outerHeight();
+			var wt=$(window).scrollTop();
+			var wh=$(window).height();
+			var hh=$('.header').outerHeight();
+
+			var gst=bt-hh;
+
+			$('html,body').animate({
+				scrollTop:gst
+			},500);
+
+			// 绑定关闭事件
+			$html.find('.btnclose').click(removeDetail);
+		}
+		// 1. 请求数据
+		getData(dataURL, function(data) {
+			// 2.将数据添加到展开的盒子
+			temDetail(data, function($html) {
+				// 3.动画效果 显示在相应的位置
+				$html.find('.detail-img-box').flexslider({
+					controlNav: false,
+					directionNav: true,
+					pauseOnHover: true
+				});
+				showBox($html);
+			});
+		});
+	});
 });
 
 function headChange(cls) {
@@ -119,6 +183,41 @@ function productShow(val) {
 	}
 }
 
+function temDetail(data, callback) {
+	// 渲染详情的模板
+	var tem = $('.product-detail').clone();
+	if (data.status) {
+		var r = data.result;
+		tem.attr('data-id', r.ID);
+		tem.find('.name').html(r.Name + '<a href="' + r.LinkURL + '">链接地址</a>');
+		tem.find('.des').html(r.Des);
+
+		var imgArr = r.Imgs.split(',');
+		var imgbox = tem.find('.slides');
+		imgbox.html('');
+		imgArr.forEach(function(val, index) {
+			var li = '<li><img src="" alt="" /></li>';
+			var $li = $(li);
+			if(val.indexOf('http')!==-1){
+				$li.find('img').attr('src', val);
+			}else{
+				$li.find('img').attr('src', '/'+val);
+			}
+			imgbox.append($li);
+		});
+		callback.call(this, tem);
+	}
+}
+
+
+function removeDetail(){
+	$('.show-product').removeClass('show');// 关闭动画
+	var timer=setTimeout(function(){
+		// 移除内容
+		$('.show-product').html('');//动画结束时移除
+	},500);
+}
+
 function removeShow() {
 	$('.product_spread').animate({
 		height: '0px'
@@ -151,19 +250,6 @@ var urlObj = {
 	"team": '/getData.php?action=query&name=team', //获取团队信息
 	"contact": '/getData.php?action=query&name=contact'
 };
-
-// 处理请求的数据
-function getData(url, callback) {
-	$.ajax({
-		url: url,
-		type: "GET",
-		dataType: "JSON",
-		success: function(data) {
-			console.log(data);
-			callback.call(this, data);
-		}
-	});
-}
 
 // 处理网页的基本信息
 function webInfo() {
