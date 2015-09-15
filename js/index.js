@@ -1,17 +1,17 @@
+// 处理请求的数据
+function getData(url, callback) {
+	$.ajax({
+		url: url,
+		type: "GET",
+		dataType: "JSON",
+		success: function(data) {
+			console.log(data);
+			callback.call(this, data);
+		}
+	});
+}
 (function(){
 
-	// 处理请求的数据
-	function getData(url, callback) {
-		$.ajax({
-			url: url,
-			type: "GET",
-			dataType: "JSON",
-			success: function(data) {
-				console.log(data);
-				callback.call(this, data);
-			}
-		});
-	}
 
 
 	$(document).ready(function() {
