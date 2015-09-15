@@ -645,9 +645,10 @@ body {
   display: inline-block;
   vertical-align: middle;
   line-height: 20px;
-  width: 100%;
+  width: 98%;
   text-align: center;
   font-size: 12px;
+  padding: 0 5px;
 }
 .floor_4 .box p span {
   font-size: 16px;
@@ -987,7 +988,7 @@ body {
   padding-top: 70px;
   color: #cb134b;
   margin: 0;
-  padding-left: 102px;
+  padding-left: 5%;
   font-weight: 200;
 }
 .floor_5 .title_1 {
@@ -998,6 +999,7 @@ body {
 }
 .floor_5 .awards {
   margin-top: 120px;
+  overflow: hidden;
 }
 .floor_5 .awards ul {
   width: 1060px;
@@ -1008,7 +1010,7 @@ body {
   position: relative;
   width: 180px;
   float: left;
-  margin: 0 42px;
+  margin: 0 40px;
 }
 .floor_5 .awards ul li .img {
   width: 175px;
@@ -1467,7 +1469,7 @@ body {
   }
   .floor_1 .nav ul li {
     float: left;
-    width: 170px;
+    width: 160px;
   }
   .floor_1 .nav ul li:hover .img {
     transform: scale(1.1, 1.1);
@@ -1494,40 +1496,45 @@ body {
     padding-bottom: 50px;
   }
   .floor_1 .nav ul .more {
-    bottom: 0px;
+    right: 40px;
+    bottom: -5px;
   }
-  .floor_1 #more {
+  .floor_2 #more {
     background: #000000;
     padding-bottom: 50px;
   }
-  .floor_1 #more ul {
+  .floor_2 #more ul {
     width: 1024px;
     margin: 0 auto;
   }
-  .floor_1 #more ul li {
+  .floor_2 #more ul li {
     float: left;
     width: 206px;
     margin: 0 17px;
   }
-  .floor_1 #more ul li:hover {
+  .floor_2 #more ul li:hover {
     transform: rotateY(360deg);
     transition: all 2s;
   }
-  .floor_1 #more ul li .img {
+  .floor_2 #more ul li .img {
     margin: 0 auto;
     text-align: center;
     width: 100px;
     height: 100px;
   }
-  .floor_1 #more ul li .img img {
+  .floor_2 #more ul li .img img {
     width: 100%;
     height: 100%;
   }
-  .floor_1 #more ul li .name {
+  .floor_2 #more ul li .name {
     margin-bottom: 5px;
   }
-  .floor_1 #more ul li .describe {
+  .floor_2 #more ul li .describe {
     font-size: 12px;
+  }
+  .floor_5 .awards {
+    width: 1024px;
+    overflow: hidden;
   }
   .floor_6 {
     height: 1200px;
@@ -1535,25 +1542,6 @@ body {
   .floor_6 .item {
     width: 1024px;
     height: 840px;
-  }
-  .floor_6 .item ul li {
-    width: 186px;
-    height: 255px;
-  }
-  .floor_6 .item .ul_1 li:last-child {
-    height: 290px;
-  }
-  .floor_6 .item .ul_2 li:last-child {
-    height: 100px;
-  }
-  .floor_6 .item .ul_3 li:last-child {
-    height: 200px;
-  }
-  .floor_6 .item .ul_4 li:last-child {
-    height: 150px;
-  }
-  .floor_6 .item .ul_5 li:last-child {
-    height: 250px;
   }
   .floor_6 .company {
     width: 1024px;
@@ -1708,7 +1696,7 @@ body {
 @media screen and (min-width: 800px) and (max-width: 1024px) {
   .floor_7 {
     height: 625px;
-    background-size: 1000px auto;
+    background-size: 1024px auto;
   }
   .floor_7 h1 {
     padding-top: 30px;
@@ -1729,31 +1717,31 @@ body {
   }
   .floor_7 .contact .sns {
     height: 80px;
-    padding-left: 100px;
-    top: 344px;
-    left: 102px;
+    padding-left: 80px;
+    top: 365px;
+    left: 100px;
     background: url(../images/S_m.png) no-repeat left;
   }
   .floor_7 .contact .e-mail {
     height: 80px;
-    padding-left: 100px;
+    padding-left: 80px;
     background: url(../images/E_m.png) no-repeat left;
-    top: 258px;
+    top: 277px;
     left: 236px;
   }
   .floor_7 .contact .adress {
     height: 80px;
-    padding-left: 100px;
+    padding-left: 80px;
     background: url(../images/A_m.png) no-repeat left;
-    top: 171px;
-    left: 370px;
+    top: 188px;
+    left: 375px;
   }
   .floor_7 .contact .tell {
     height: 80px;
-    padding-left: 100px;
+    padding-left: 80px;
     background: url(../images/M_m.png) no-repeat left;
-    top: 86px;
-    left: 506px;
+    top: 100px;
+    left: 513px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 959px) {
@@ -2060,7 +2048,7 @@ body {
     height: 468px;
   }
   .floor_5 {
-    height: 1000px;
+    height: 500px;
   }
   .floor_5 h1 {
     font-size: 20px;
@@ -2073,7 +2061,14 @@ body {
     margin-top: 10px;
   }
   .floor_5 .awards ul {
-    width: 530px;
+    width: 650px;
+  }
+  .floor_5 .awards ul li {
+    width: 132px;
+    margin: 0 15px;
+  }
+  .floor_5 .awards ul li .img {
+    width: 120px;
   }
   .floor_6 {
     height: 1000px;
