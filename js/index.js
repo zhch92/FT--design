@@ -10,115 +10,123 @@ function getData(url, callback) {
 		}
 	});
 }
+(function(){
 
 
-$(document).ready(function() {
-	// 轮播============
-	$('.flexslider').flexslider({
-		directionNav: true,
-		pauseOnAction: false
-	});
-	// ===========
-	// 平滑滚动到相应位置
-	$(".home").click(function() {
-		$.scrollTo('.floor_1', 500);
-	});
-	$(".product").click(function() {
-		$.scrollTo('.floor_2', 500);
-	});
-	$(".awards").click(function() {
-		$.scrollTo('.floor_5', 500);
-	});
-	$(".about").click(function() {
-		$.scrollTo('.floor_6', 500);
-	});
-	$(".contact").click(function() {
-		$.scrollTo('.floor_7', 500);
-	});
-	// ========
-	// 鼠标滚轮
-	$(window).scroll(function() {
-		var sTop = $(document).scrollTop() + 87;
-		var sHight = $('.floor_1').height();
-		var sOffset2 = $('.floor_2').offset();
-		var sOffset5 = $('.floor_5').offset();
-		var sOffset6 = $('.floor_6').offset();
-		var sOffset7 = $('.floor_7').offset();
-		var oF2 = sOffset2.top;
-		var oF5 = sOffset5.top;
-		var oF6 = sOffset6.top;
-		var oF7 = sOffset7.top;
-		if (sTop < oF2) {
-			$(".header").css('background', "transparent");
-			headChange('home');
-		} else {
-			$(".header").css('background', "#030303");
-		}
-		if (sTop > oF2 && sTop < oF5) {
-			headChange('product');
-		}
-		if (sTop > oF5 && sTop < oF6) {
-			headChange('awards');
-		}
-		if (sTop > oF6 && sTop < oF7) {
-			headChange('about');
-		}
-		if (sTop > oF7) {
-			headChange('contact');
-		}
-	});
 
-	$("#productList .p-item").click(function(event) {
+	$(document).ready(function() {
+		// 轮播============
+		$('.flexslider').flexslider({
+			directionNav: true,
+			pauseOnAction: false
+		});
+		// ===========
+		// 平滑滚动到相应位置
+		$(".home").click(function() {
+			$.scrollTo('.floor_1', 500);
+		});
+		$(".product").click(function() {
+			$.scrollTo('.floor_2', 500);
+		});
+		$(".awards").click(function() {
+			$.scrollTo('.floor_5', 500);
+		});
+		$(".about").click(function() {
+			$.scrollTo('.floor_6', 500);
+		});
+		$(".contact").click(function() {
+			$.scrollTo('.floor_7', 500);
+		});
+		// ========
+		// 鼠标滚轮
+		$(window).scroll(function() {
+			var sTop = $(document).scrollTop() + 87;
+			var sHight = $('.floor_1').height();
+			var sOffset2 = $('.floor_2').offset();
+			var sOffset5 = $('.floor_5').offset();
+			var sOffset6 = $('.floor_6').offset();
+			var sOffset7 = $('.floor_7').offset();
+			var oF2 = sOffset2.top;
+			var oF5 = sOffset5.top;
+			var oF6 = sOffset6.top;
+			var oF7 = sOffset7.top;
+			if (sTop < oF2) {
+				$(".header").css('background', "transparent");
+				headChange('home');
+			} else {
+				$(".header").css('background', "#030303");
+			}
+			if (sTop > oF2 && sTop < oF5) {
+				headChange('product');
+			}
+			if (sTop > oF5 && sTop < oF6) {
+				headChange('awards');
+			}
+			if (sTop > oF6 && sTop < oF7) {
+				headChange('about');
+			}
+			if (sTop > oF7) {
+				headChange('contact');
+			}
+		});
 
-		var $this = $(this);
-		var id = $this.attr('data-id'); //产品id
-		var pos = $this.attr('data-show-pos'); //显示的位置
+		$("#productList .p-item").click(function(event) {
 
-		var dataURL = '/getData.php?action=query&name=productDetail&id=' + id;
+			var $this = $(this);
+			var id = $this.attr('data-id'); //产品id
+			var pos = $this.attr('data-show-pos'); //显示的位置
 
-		// 判断是否已经点击 显示了详情 是 就返回
-		var findB=$('.product-detail[data-id="'+id+'"]');
-		if(findB.length>0 || id===undefined || id===""){
-			removeDetail();
-			return;
-		}
-		function showBox($html) {
-			var posBox=$(".show-position-"+pos);
-			posBox.html('').html($html);//先清空 后放数据
-			posBox.addClass('show');
-			posBox.find(".product-detail").css('height','auto');
+			var dataURL = '/getData.php?action=query&name=productDetail&id=' + id;
 
-			// 移动位置
-			var bt=posBox.offset().top;
-			var bh=posBox.outerHeight();
-			var wt=$(window).scrollTop();
-			var wh=$(window).height();
-			var hh=$('.header').outerHeight();
+			// 判断是否已经点击 显示了详情 是 就返回
+			var findB=$('.product-detail[data-id="'+id+'"]');
+			if(findB.length>0 || id===undefined || id===""){
+				removeDetail();
+				return;
+			}
+			function showBox($html) {
+				var posBox=$(".show-position-"+pos);
+				posBox.html('').html($html);//先清空 后放数据
+				posBox.addClass('show');
+				posBox.find(".product-detail").css('height','auto');
 
-			var gst=bt-hh;
+				// 移动位置
+				var bt=posBox.offset().top;
+				var bh=posBox.outerHeight();
+				var wt=$(window).scrollTop();
+				var wh=$(window).height();
+				var hh=$('.header').outerHeight();
 
-			$('html,body').animate({
-				scrollTop:gst
-			},500);
+				var gst=bt-hh;
 
-			// 绑定关闭事件
-			$html.find('.btnclose').click(removeDetail);
-		}
-		// 1. 请求数据
-		getData(dataURL, function(data) {
-			// 2.将数据添加到展开的盒子
-			temDetail(data, function($html) {
-				// 3.动画效果 显示在相应的位置
-				$html.find('.detail-img-box').flexslider({
-					controlNav: false,
-					directionNav: true,
-					pauseOnHover: true
+				$('html,body').animate({
+					scrollTop:gst
+				},500);
+
+				// 绑定关闭事件
+				$html.find('.btnclose').click(removeDetail);
+			}
+			// 1. 请求数据
+			getData(dataURL, function(data) {
+				// 2.将数据添加到展开的盒子
+				temDetail(data, function($html) {
+					// 3.动画效果 显示在相应的位置
+					$html.find('.detail-img-box').flexslider({
+						controlNav: false,
+						directionNav: true,
+						pauseOnHover: true
+					});
+					showBox($html);
 				});
-				showBox($html);
 			});
 		});
 	});
-});
+
+
+
+}).call(this);
+
+
 
 function headChange(cls) {
 	$(".header .head ul " + '.' + cls).addClass("active").siblings().removeClass("active");
@@ -139,8 +147,6 @@ function moreShow() {
 }
 
 function scTop() {
-	// $(".floor_2,.floor_5,.floor_6,.floor_7").css("padding-top", '0px');
-	// $(".floor_2").css("padding-top", '87px');
 	$.scrollTo('.floor_2', 500);
 }
 
