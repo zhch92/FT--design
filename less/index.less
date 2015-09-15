@@ -845,7 +845,7 @@ body {
 		.title_1 {
 				color: #3f3f3f;
 				font-size: 60px;
-				padding-left: 102px;
+				padding-left: 5%;
 				font-weight: 200;
 		}
 		.awards {
@@ -939,7 +939,7 @@ body {
 										// height: 85px;
 										padding: 15px;
 										position: absolute;
-										bottom: -115px;
+										bottom: -120px;
 										left: 0;
 										background: #cb134b;
 										color: #ffffff;
@@ -1078,6 +1078,9 @@ body {
 								right: 3px;
 								top: 23px;
 								color: #3f3f3f;
+						}
+						.hide{
+							opacity: 0;
 						}
 				}
 				.li_1 {
@@ -2093,6 +2096,7 @@ h1{
  }
 }
 .floor_6 {
+	height: 1000px;
 h1{
 	font-size: 20px;
 	padding-left: 5%;
@@ -2100,44 +2104,76 @@ h1{
 	.state{
 		padding-left: 5%;
 	}
-	.item{
+	.item{width: 650px;
+		height: 575px;
+		overflow: hidden;
 		ul{
 			width: auto;
 			li{
 				// height: 150px;
-				width: 181px;
+				width: 150px;
+				height: 280px;
 			}
 			.li_s{
 				height: 0 !important;
 			}
 		}
+		.ul_1{
+			left: 0;
+			li:first-child{
+				height: 0;
+			}
+		}
+		.ul_2{
+			left: 162px;
+			li:first-child{
+				height: 0;
+			}
+		}
+		.ul_3{
+			left: 324px;
+			li:first-child{
+				height: 0;
+			}
+		}
 		 .ul_4{
-		 	left: 0;
-		 	top: 294px;
+		 	left: 486px;
+		 	top: 0px;
+		 	li:first-child{
+				height: 0;
+			}
 		 }
 		 .ul_5{
-		 	left: 210px;
-		 	top: 590px;
+		 	left: 0px;
+		 	top: 280px;
+		 	li:first-child{
+				height: 0;
+			}
 		 }
 		} 
 		.company{
 			width: 650px;
+			margin-top: 50px;
 			ul{
 				li{
 					font-size: 12px;
+					width: 240px;
 					.city{
 						font-size: 14px;
 						margin-right: 10px;
 					}
+					.hide{
+						opacity: 1;
+					}
 				}
-				.li_1{
-					width: 160px;
+				// .li_1{
+				// 	width: 160px;
 
-				}
-				.li_3{
-					width: 160px;
+				// }
+				// .li_3{
+				// 	width: 160px;
 
-				}
+				// }
 			}
 		}
 	}
@@ -2150,7 +2186,7 @@ h1{
 					font-size: 20px;
 			}
 			.contact {
-					width: 500px;
+					width: 650px;
 					dt {
 							color: #a3a3a3;
 							font-size: 14px;
@@ -2191,6 +2227,7 @@ h1{
 	}
 	.footer{
 		.foot{
+			padding: 25px 0;
 			width: 650px;
 		}
 	}

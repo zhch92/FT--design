@@ -993,7 +993,7 @@ body {
 .floor_5 .title_1 {
   color: #3f3f3f;
   font-size: 60px;
-  padding-left: 102px;
+  padding-left: 5%;
   font-weight: 200;
 }
 .floor_5 .awards {
@@ -1079,7 +1079,7 @@ body {
 .floor_6 .item ul li .introduce {
   padding: 15px;
   position: absolute;
-  bottom: -115px;
+  bottom: -120px;
   left: 0;
   background: #cb134b;
   color: #ffffff;
@@ -1216,6 +1216,9 @@ body {
   right: 3px;
   top: 23px;
   color: #3f3f3f;
+}
+.floor_6 .company li .hide {
+  opacity: 0;
 }
 .floor_6 .company .li_1 {
   background: url(../images/city_1.png) no-repeat 20px 15px;
@@ -2072,6 +2075,9 @@ body {
   .floor_5 .awards ul {
     width: 530px;
   }
+  .floor_6 {
+    height: 1000px;
+  }
   .floor_6 h1 {
     font-size: 20px;
     padding-left: 5%;
@@ -2079,38 +2085,67 @@ body {
   .floor_6 .state {
     padding-left: 5%;
   }
+  .floor_6 .item {
+    width: 650px;
+    height: 575px;
+    overflow: hidden;
+  }
   .floor_6 .item ul {
     width: auto;
   }
   .floor_6 .item ul li {
-    width: 181px;
+    width: 150px;
+    height: 280px;
   }
   .floor_6 .item ul .li_s {
     height: 0 !important;
   }
-  .floor_6 .item .ul_4 {
+  .floor_6 .item .ul_1 {
     left: 0;
-    top: 294px;
+  }
+  .floor_6 .item .ul_1 li:first-child {
+    height: 0;
+  }
+  .floor_6 .item .ul_2 {
+    left: 162px;
+  }
+  .floor_6 .item .ul_2 li:first-child {
+    height: 0;
+  }
+  .floor_6 .item .ul_3 {
+    left: 324px;
+  }
+  .floor_6 .item .ul_3 li:first-child {
+    height: 0;
+  }
+  .floor_6 .item .ul_4 {
+    left: 486px;
+    top: 0px;
+  }
+  .floor_6 .item .ul_4 li:first-child {
+    height: 0;
   }
   .floor_6 .item .ul_5 {
-    left: 210px;
-    top: 590px;
+    left: 0px;
+    top: 280px;
+  }
+  .floor_6 .item .ul_5 li:first-child {
+    height: 0;
   }
   .floor_6 .company {
     width: 650px;
+    margin-top: 50px;
   }
   .floor_6 .company ul li {
     font-size: 12px;
+    width: 240px;
   }
   .floor_6 .company ul li .city {
     font-size: 14px;
     margin-right: 10px;
   }
-  .floor_6 .company ul .li_1 {
-    width: 160px;
-  }
-  .floor_6 .company ul .li_3 {
-    width: 160px;
+  .floor_6 .company ul li .hide {
+    opacity: 1;
   }
   .floor_7 {
     height: 502px;
@@ -2122,7 +2157,7 @@ body {
     font-size: 20px;
   }
   .floor_7 .contact {
-    width: 500px;
+    width: 650px;
   }
   .floor_7 .contact dt {
     color: #a3a3a3;
@@ -2161,6 +2196,7 @@ body {
     background: url(../images/M_m.png) no-repeat left;
   }
   .footer .foot {
+    padding: 25px 0;
     width: 650px;
   }
 }
