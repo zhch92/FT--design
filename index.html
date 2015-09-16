@@ -3,9 +3,11 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>title官网-专注设计</title>
+	<title>官网-专注设计</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+	<meta name="description" content="网站描述">
+	<meta name="keywords" content="网站关键字">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/flexslider.css">
 	<link rel="stylesheet" href="css/index.css">
@@ -42,7 +44,7 @@
 		<div id="headBg" class="nav_show">
 			<h1 class="title">DESIGN CHANGES IN LIEF</h1>
 			<h2 class="logo_img">
-				<img src="images/logo_img.png" alt=""></h2>
+				<img id="Logo" src="images/logo_img.png" alt=""></h2>
 			<h2 class="logo_font">
 				<img src="images/logo_font.png" alt=""></h2>
 			<a class="down" href="javascript:void(0);" onclick="scTop()"></a>
@@ -144,10 +146,7 @@
 	</div>
 	<div class="floor_3 flexslider" id="b04">
 		<ul class="slides clearfix">
-			<li style="background:url(images/banner.jpg)  center no-repeat; background-size:100% auto;"></li>
-			<li style="background:url(images/banner_2.jpg)  center no-repeat; background-size:100% auto;"></li>
-			<li style="background:url(images/banner_4.jpg)  center no-repeat; background-size:100% auto;"></li>
-			<li style="background:url(images/banner_2.jpg)  center no-repeat; background-size:100% auto;"></li>
+			<!-- <li style="background:center no-repeat; background-size:100% auto;"></li> --><!-- 写一个模板 -->
 		</ul>
 	</div>
 	<div class="product-detail">
@@ -183,7 +182,7 @@
 	<div class="floor_4" id="productList">
 		<div class="show-product show-position-1"></div>
 		<div class="product_show_1 clearfix">
-			<div class="show_lside p-item" data-id="3" data-show-pos='1'>
+			<div class="show_lside p-item" data-id="" data-show-pos='1'>
 				<!-- p-item 指所有产品元素共有的类
 					 data-id 指每个产品对应的id值
 					 data-show-pos  指详情元素显示位置的盒子 -->
@@ -193,49 +192,49 @@
 						<br>这是一些介绍</p>
 				</div>
 				<div class="inner">
-					<img src="images/item_1.jpg" alt="">
+					<img alt="">
 				</div>
 			</div>
 			<div class="show_rside">
 				<div class="rside_top">
 					<ul class="clearfix">
-						<li class="p-item"  onclick="productShow('0')">
+						<li class="p-item" data-id="" data-show-pos='1'>
 							<div class="box">
 								<p>
 									<span>标题</span>
 									<br>这是一些介绍</p>
 							</div>
 							<div class="inner">
-								<img src="images/item_2.jpg" alt="">
+								<img alt="">
 							</div>
 						</li>
-						<li class="p-item"  onclick="productShow('0')">
+						<li class="p-item" data-id="" data-show-pos='1'>
 							<div class="box">
 								<p>
 									<span>标题</span>
-									<br>这是一些介绍</p>
+									<br>这是一fadf</p>
 							</div>
 							<div class="inner">
-								<img src="images/item_3.jpg" alt="">
+								<img alt="">
 							</div>
 						</li>
 					</ul>
 				</div>
-				<div class="rside_dw p-item" onclick="productShow('1')">
+				<div class="rside_dw p-item"  data-id="" data-show-pos='2'>
 					<div class="box">
 						<p>
 							<span>标题</span>
 							<br>这是一些介绍</p>
 					</div>
 					<div class="inner">
-						<img src="images/item_4.jpg" alt="">
+						<img alt="">
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="show-product show-position-2"></div>
 		<div class="product_show_2 clearfix">
-			<div class="show_lside" onclick="productShow('1')">
+			<div class="show_lside p-item"  data-id="" data-show-pos='2'>
 				<ul class="clearfix">
 					<li class="li_1">
 						<div class="box">
@@ -244,47 +243,47 @@
 								<br>这是一些介绍</p>
 						</div>
 						<div class="inner">
-							<img src="images/item_5.jpg" alt=""></div>
+							<img alt=""></div>
 					</li>
-					<li class="li_2"  onclick="productShow('1')">
+					<li class="li_2 p-item"   data-id="" data-show-pos='2'>
 						<div class="box">
 							<p>
 								<span>标题</span>
 								<br>这是一些介绍</p>
 						</div>
 						<div class="inner">
-							<img src="images/item_6.jpg" alt=""></div>
+							<img alt=""></div>
 					</li>
-					<li class="li_3"  onclick="productShow('3')">
+					<li class="li_3 p-item" data-id="" data-show-pos='2'>
 						<div class="box">
 							<p>
 								<span>标题</span>
 								<br>这是一些介绍</p>
 						</div>
 						<div class="inner">
-							<img src="images/item_8.jpg" alt=""></div>
+							<img alt=""></div>
 					</li>
-					<li class="li_3"  onclick="productShow('2')">
+					<li class="li_3 p-item" data-id="" data-show-pos='2'>
 						<div class="box">
 							<p>
 								<span>标题</span>
 								<br>这是一些介绍</p>
 						</div>
 						<div class="inner">
-							<img src="images/item_9.jpg" alt=""></div>
+							<img alt=""></div>
 					</li>
-					<li class="li_4"  onclick="productShow('2')">
+					<li class="li_4 p-item" data-id="" data-show-pos='2'>
 						<div class="box">
 							<p>
 								<span>标题</span>
 								<br>这是一些介绍</p>
 						</div>
 						<div class="inner">
-							<img src="images/item_10.jpg" alt=""></div>
+							<img alt=""></div>
 					</li>
 				</ul>
 			</div>
-			<div class="show_rside"  onclick="productShow('1')">
+			<div class="show_rside p-item" data-id="" data-show-pos='2'>
 				<div class="box">
 					<p>
 						<span>标题</span>
@@ -292,22 +291,22 @@
 
 				</div>
 				<div class="inner">
-					<img src="images/item_7.jpg" alt=""></div>
+					<img alt=""></div>
 			</div>
 		</div>
 		<div class="show-product show-position-3"></div>
 		<div class="product_show_3">
 			<ul class="clearfix">
-				<li class="li_1"   onclick="productShow('2')">
+				<li class="li_1 p-item" data-id="" data-show-pos='3'>
 					<div class="box">
 						<p>
 							<span>标题</span>
 							<br>这是一些介绍</p>
 					</div>
 					<div class="inner">
-						<img src="images/item_11.jpg" alt=""></div>
+						<img alt=""></div>
 				</li>
-				<li class="li_2"   onclick="productShow('2')">
+				<li class="li_2 p-item" data-id="" data-show-pos='3'>
 					<div class="box">
 
 						<p>
@@ -316,36 +315,34 @@
 
 					</div>
 					<div class="inner">
-						<img src="images/item_10.jpg" alt=""></div>
+						<img alt=""></div>
 				</li>
-				<li class="li_3 p-item" data-id="24" data-show-pos='4'>
+				<li class="li_3 p-item" data-id="" data-show-pos='3'>
 					<div class="box">
-
 						<p>
 							<span>标题</span>
 							<br>这是一些介绍</p>
-
 					</div>
 					<div class="inner">
-						<img src="images/item_14.jpg" alt=""></div>
+						<img alt=""></div>
 				</li>
 			</ul>
 		</div>
 		<div class="show-product show-position-4"></div>
 		<div class="product_show_4 clearfix">
 			<div class="show_lside">
-				<div class="lside_top"   onclick="productShow('3')">
+				<div class="lside_top p-item"  data-id="" data-show-pos='4'>
 					<div class="box">
 						<p>
 							<span>标题</span>
 							<br>这是一些介绍</p>
 					</div>
 					<div class="inner">
-						<img src="images/item_15.jpg" alt=""></div>
+						<img alt=""></div>
 				</div>
 				<div class="lside_dw">
 					<ul class="clearfix">
-						<li  onclick="productShow('4')">
+						<li class="p-item"  data-id="" data-show-pos='4'>
 							<div class="box">
 								<p>
 									<span>标题</span>
@@ -353,9 +350,9 @@
 
 							</div>
 							<div class="inner">
-								<img src="images/item_20.jpg" alt=""></div>
+								<img alt=""></div>
 						</li>
-						<li  onclick="productShow('4')">
+						<li class="p-item" data-id="" data-show-pos='4'>
 							<div class="box">
 								<p>
 									<span>标题</span>
@@ -363,51 +360,50 @@
 
 							</div>
 							<div class="inner">
-								<img src="images/item_21.jpg" alt=""></div>
+								<img alt=""></div>
 						</li>
 					</ul>
 				</div>
 			</div>
-			<div class="show_m_1"   onclick="productShow('4')">
+			<div class="show_m_1 p-item"  data-id="" data-show-pos='5'>
 				<div class="box">
 					<p>
 						<span>标题</span>
 						<br>这是一些介绍</p>
-
 				</div>
 				<div class="inner">
-					<img src="images/item_16.jpg" alt=""></div>
+					<img alt=""></div>
 			</div>
 			<div class="show_m_2">
 				<ul>
-					<li class="p-item" data-id="3" data-show-pos='5'>
+					<li class="p-item" data-id="" data-show-pos='5'>
 						<div class="box">
 							<p>
 								<span>标题</span>
 								<br>这是一fasdfja;dsjlj些介绍</p>
 						</div>
 						<div class="inner">
-							<img src="images/item_17.jpg" alt=""></div>
+							<img alt=""></div>
 					</li>
-					<li   onclick="productShow('4')">
+					<li class="p-item" data-id="" data-show-pos='5'>
 						<div class="box">
 							<p>
 								<span>标题</span>
 								<br>这是一些介绍</p>
 						</div>
 						<div class="inner">
-							<img src="images/item_18.jpg" alt=""></div>
+							<img alt=""></div>
 					</li>
 				</ul>
 			</div>
-			<div class="show_rside p-item" data-id="3" data-show-pos='5'>
+			<div class="show_rside p-item" data-id="" data-show-pos='5'>
 				<div class="box">
 					<p>
 						<span>标题</span>
 						<br>这是一些介绍</p>
 				</div>
 				<div class="inner">
-					<img src="images/item_19.jpg" alt=""></div>
+					<img alt=""></div>
 			</div>
 		</div>
 		<div class="show-product show-position-5"></div>
@@ -466,9 +462,9 @@
 		<p class="state">dkjsduhdfhsdfosifiosfiosisjiiosios</p>
 		<h3>
 			关于FT design
-			<a href="#">点击下载</a>
+			<a id="aboutUsFile" href="#">点击下载</a>
 		</h3>
-		<div class="item clearfix">
+		<div id="teamBox" class="item clearfix">
 			<ul class="ul_lside_1">
 				<li></li>
 				<li></li>
@@ -483,76 +479,76 @@
 			</ul>
 			<ul class="ul_1">
 				<li></li>
-				<li>
-					<img src="images/show.jpg" alt="">
+				<li class="user-item">
+					<img alt="">
 					<div class="introduce">
-						<p class="name">LIU DI</p>
-						<p class="text">xxxxxxssssaaaaas是世界上是多少思考思考</p>
+						<p class="name"></p>
+						<p class="text"></p>
 					</div>
 				</li>
 				<li></li>
 			</ul>
 			<ul class="ul_2">
 				<li></li>
-				<li>
-					<img src="images/show_01.png" alt="">
+				<li class="user-item">
+					<img alt="">
 					<div class="introduce">
-						<p class="name">LIU DI</p>
-						<p class="text">xxxxxxssssaaaaas是世界上是多少思考思考</p>
+						<p class="name"></p>
+						<p class="text"></p>
 					</div>
 				</li>
-				<li>
-					<img src="images/show_02.png" alt="">
+				<li class="user-item">
+					<img alt="">
 					<div class="introduce">
-						<p class="name">LIU DI</p>
-						<p class="text">xxxxxxssssaaaaas是世界上是多少思考思考</p>
+						<p class="name"></p>
+						<p class="text"></p>
 					</div>
 				</li>
 				<li></li>
 			</ul>
 			<ul class="ul_3">
 				<li></li>
-				<li>
-					<img src="images/show_03.jpg" alt="">
+				<li class="user-item">
+					<img alt="">
 					<div class="introduce">
-						<p class="name">LIU DI</p>
-						<p class="text">xxxxxxssssaaaaas是世界上是多少思考思考</p>
+						<p class="name"></p>
+						<p class="text"></p>
 					</div>
 				</li>
-				<li>
-					<img src="images/show_03.jpg" alt="">
+				<li class="user-item">
+					<img alt="">
 					<div class="introduce">
-						<p class="name">LIU DI</p>
-						<p class="text">xxxxxxssssaaaaas是世界上是多少思考思考</p>
+						<p class="name"></p>
+						<p class="text"></p>
 					</div>
 				</li>
 				<li></li>
 			</ul>
 			<ul class="ul_4">
 				<li></li>
-				<li>
-					<img src="images/show_04.jpg" alt="">
+				<li class="user-item">
+					<img alt="">
 					<div class="introduce">
-						<p class="name">LIU DI</p>
-						<p class="text">xxxxxxssssaaaaas是世界上是多少思考思考</p>
+						<p class="name"></p>
+						<p class="text"></p>
 					</div>
 				</li>
-				<li>
-					<img src="images/show_04.jpg" alt="">
+				<li class="user-item">
+					<img alt="">
 					<div class="introduce">
-						<p class="name">LIU DI</p>
-						<p class="text">xxxxxxssssaaaaas是世界上是多少思考思考</p>
+						<p class="name"></p>
+						<p class="text"></p>
 					</div>
 				</li>
 				<li></li>
 			</ul>
 			<ul class="ul_5">
 				<li></li>
-				<li>
-					<img src="images/show_05.jpg" alt="">
+				<li class="user-item">
+					<img alt="">
 					<div class="introduce">
-						<p class="name">LIU DI</p>
-						<p class="text">xxxxxxssssaaaaas是世界上是多少思考思考</p>
+						<p class="name"></p>
+						<p class="text"></p>
 					</div>
 				</li>
 				<li></li>
@@ -594,36 +590,25 @@
 	</div>
 	<div class="floor_7">
 		<h1>COTNACT</h1>
-		<div class="contact">
-			<div class="w-ele sns">
+		<div id="contactBox" class="contact">
+			<div data-type="0" class="w-ele sns">
 				<dl>
 					<dt>SNS</dt>
-					<dd>微信搜索:hongjin-805</dd>
-					<dd>微博关注:fortaldesign</dd>
 				</dl>
 			</div>
-			<div class="w-ele e-mail">
+			<div data-type="1" class="w-ele e-mail">
 				<dl>
 					<dt>E-mail</dt>
-					<dd>刘程：405294589@qq.com</dd>
 				</dl>
 			</div>
-			<div class="w-ele adress">
+			<div data-type="2" class="w-ele adress">
 				<dl>
 					<dt>Address</dt>
-					<dd>北京：北京市朝阳区酒仙桥东路10号冠捷北京Madnet二层</dd>
-					<dd>深圳：宝安区松岗街潭头第三工业区B6栋1楼</dd>
-					<dd>武汉：蔡甸区汉阳大道恒大绿洲5-2-204</dd>
-					<dd>成都：成都高新区天府软件园A区9栋3楼</dd>
 				</dl>
 			</div>
-			<div class="w-ele tell">
+			<div data-type="3" class="w-ele tell">
 				<dl>
 					<dt>Phone</dt>
-					<dd>北京：+86 18910163971（晏先生）</dd>
-					<dd>深圳：+86 15919910276（陈先生）</dd>
-					<dd>武汉：+86 15327429326（赵先生）</dd>
-					<dd>成都：+86 18227625117（刘先生）</dd>
 				</dl>
 			</div>
 		</div>

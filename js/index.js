@@ -1,25 +1,241 @@
-// 处理请求的数据
-function getData(url, callback) {
-	$.ajax({
-		url: url,
-		type: "GET",
-		dataType: "JSON",
-		success: function(data) {
-			console.log(data);
-			callback.call(this, data);
-		}
-	});
-}
-(function(){
+(function() {
 
+	var host = "http://design.boyweb.cn"; //主机地址 阿里云
+	var urlObj = {
+		"webInfo": host + '/getData.php?action=query&name=webInfo',
+		"carousel": host + '/getData.php?action=query&name=carousel',
+		"product": host + '/getData.php?action=query&name=product',
+		"productDetail": host + '/getData.php?action=query&name=product', //要动态加上id
+		"team": host+'/getData.php?action=query&name=team', //获取团队信息
+		"contact": host + '/getData.php?action=query&name=contact'
+	};
+
+	// 处理请求的数据
+	function getData(url, callback) {
+		$.ajax({
+			url: url,
+			type: "GET",
+			dataType: "JSON",
+			success: function(data) {
+				callback.call(this, data);
+			}
+		});
+	}
+
+	// 处理网页的基本信息
+	function webInfo() {
+		var _url = urlObj.webInfo;
+		getData(_url, function(data) {
+			var webData = data.result;
+
+			var oldName = document.title;
+			document.title = webData.Name + oldName;
+			$('meta[name="description"]').attr('content', webData.Des);
+			$("#headBg").css({
+				"background-image": 'url("' + webData.HeadImg + '")'
+			});
+			$('meta[name="keywords"]').attr('content', webData.KeyValue);
+			$("#Logo").attr("src", webData.Logo);
+			$("#aboutUsFile").attr('href', webData.TeamPDF);
+
+		});
+	}
+
+	function carousel() {
+		var _url = urlObj.carousel;
+		getData(_url, function(data) {
+			var cData = data.result;
+			var tem = '<li data-index="pindex" data-id="pid" data-src="imgsrc" style="background: url(imgsrc) center no-repeat; background-size:100% auto;"></li>';
+			cData.forEach(function(val, i) {
+				var _src = val.CarouselImg;
+				var t_str;
+				if (_src.indexOf('http') !== -1) {
+					t_str = tem.replace(/imgsrc/g, _src);
+				} else {
+					t_str = tem.replace(/imgsrc/g, host + '/' + _src);
+				}
+				t_str = t_str.replace(/pindex/g, i);
+				t_str = t_str.replace(/pid/g, val.ID);
+
+				$("#b04 ul").append(t_str);
+			});
+
+			// 图片给完了 轮播============
+			$('#b04').flexslider({
+				directionNav: true,
+				pauseOnAction: false
+			});
+		});
+	}
+
+
+	function productInit() {
+		var _url = urlObj.product;
+		getData(_url, function(data) {
+			var pitems = $('.p-item');
+			var pData = data.result;
+			pData.forEach(function(val, i) {
+				var index = parseInt(val.Position);
+				var ele = pitems.eq(index - 1);
+
+				ele.attr({
+					'data-id': val.ID,
+					'data-pos': val.Position
+				});
+
+				var ptext = ele.find('.box>p');
+				var pimg = ele.find('.inner>img');
+				ptext.html(val.Name + '<br />' + val.Des);
+				if (val.Image.indexOf('http') !== -1) {
+					pimg.attr('src', val.Image);
+				} else {
+					pimg.attr('src', host + '/' + val.Image);
+				}
+			});
+
+			bindPevent();//绑定点击详情事件
+		});
+	}
+
+
+	function bindPevent() {
+		$("#productList .p-item").click(function(event) {
+			var $this = $(this);
+			var id = $this.attr('data-id'); //产品id
+			var pos = $this.attr('data-show-pos'); //显示的位置
+
+			var dataURL = '/getData.php?action=query&name=productDetail&id=' + id;
+
+			// 判断是否已经点击 显示了详情 是 就返回
+			var findB = $('.product-detail[data-id="' + id + '"]');
+			if (findB.length > 0 || id === undefined || id === "") {
+				removeDetail();
+				return;
+			}
+
+			function showBox($html) {
+				var posBox = $(".show-position-" + pos);
+				posBox.html('').html($html); //先清空 后放数据
+				posBox.addClass('show');
+				posBox.find(".product-detail").css('height', 'auto');
+
+				// 移动位置
+				var bt = posBox.offset().top;
+				var bh = posBox.outerHeight();
+				var wt = $(window).scrollTop();
+				var wh = $(window).height();
+				var hh = $('.header').outerHeight();
+				var gst = bt - hh;
+				$('html,body').animate({
+					scrollTop: gst
+				}, 500);
+				// 绑定关闭事件
+				$html.find('.btnclose').click(removeDetail);
+			}
+			// 1. 请求数据
+			getData(dataURL, function(data) {
+				// 2.将数据添加到展开的盒子
+				temDetail(data, function($html) {
+					// 3.动画效果 显示在相应的位置
+					$html.find('.detail-img-box').flexslider({
+						controlNav: false,
+						directionNav: true,
+						pauseOnHover: true
+					});
+					showBox($html);
+				});
+			});
+		});
+	}
+
+
+	function team(){
+		var _url=urlObj.team;
+		getData(_url,function(data){
+			var tData=data.result;
+			var userBoxs=$('#teamBox .user-item');
+
+			tData.forEach(function(val,index){
+				var img=userBoxs.eq(index).find('img'),
+						name=userBoxs.eq(index).find('.name'),
+						text=userBoxs.eq(index).find('.text');
+				img.attr({
+					'src':val.Image.indexOf('http')!==-1 ? val.Image : host+'/'+val.Image,
+					'title':val.Des,
+					'alt':val.Post,
+					'data-id':val.ID
+				});
+				name.html(val.Name);
+				text.html(val.Des);
+			});
+		});
+	}
+
+	function contact(){
+		var _url=urlObj.contact;
+		getData(_url,function(data){
+			var cData=data.result;
+			var cBoxs=$('#contactBox .w-ele');
+			cData.forEach(function(val,index){
+				var type=parseInt(val.Type);
+				var ele=cBoxs.eq(type);
+				var str='<dd data-id="'+val.ID+'">'+val.Title+':'+val.Content+'</dd>';
+				ele.append(str);
+			});
+		});
+	}
+
+	function temDetail(data, callback) {
+		// 渲染详情的模板
+		var tem = $('.product-detail').clone();
+		if (data.status) {
+			var r = data.result;
+			tem.attr('data-id', r.ID);
+			tem.find('.name').html(r.Name + '<a href="' + r.LinkURL + '">链接地址</a>');
+			tem.find('.des').html(r.Des);
+
+			var imgArr = r.Imgs.split(',');
+			var imgbox = tem.find('.slides');
+			imgbox.html('');
+			imgArr.forEach(function(val, index) {
+				var li = '<li><img src="" alt="" /></li>';
+				var $li = $(li);
+				if (val.indexOf('http') !== -1) {
+					$li.find('img').attr('src', val);
+				} else {
+					$li.find('img').attr('src','/' + val);
+				}
+				imgbox.append($li);
+			});
+			callback.call(this, tem);
+		}
+	}
+
+	function removeDetail() {
+		$('.show-product').removeClass('show'); // 关闭动画
+		var timer = setTimeout(function() {
+			// 移除内容
+			$('.show-product').html(''); //动画结束时移除
+		}, 500);
+	}
+
+	// 网站基本信息处理
+	webInfo();
+
+	// 网站滚动图片处理
+	carousel();
+
+	// 产品图片初始化
+	productInit();
+
+	// 团队
+	team();
+
+	// 联系我们
+	contact();
 
 
 	$(document).ready(function() {
-		// 轮播============
-		$('.flexslider').flexslider({
-			directionNav: true,
-			pauseOnAction: false
-		});
 		// ===========
 		// 平滑滚动到相应位置
 		$(".home").click(function() {
@@ -69,63 +285,11 @@ function getData(url, callback) {
 				headChange('contact');
 			}
 		});
-
-		$("#productList .p-item").click(function(event) {
-
-			var $this = $(this);
-			var id = $this.attr('data-id'); //产品id
-			var pos = $this.attr('data-show-pos'); //显示的位置
-
-			var dataURL = '/getData.php?action=query&name=productDetail&id=' + id;
-
-			// 判断是否已经点击 显示了详情 是 就返回
-			var findB=$('.product-detail[data-id="'+id+'"]');
-			if(findB.length>0 || id===undefined || id===""){
-				removeDetail();
-				return;
-			}
-			function showBox($html) {
-				var posBox=$(".show-position-"+pos);
-				posBox.html('').html($html);//先清空 后放数据
-				posBox.addClass('show');
-				posBox.find(".product-detail").css('height','auto');
-
-				// 移动位置
-				var bt=posBox.offset().top;
-				var bh=posBox.outerHeight();
-				var wt=$(window).scrollTop();
-				var wh=$(window).height();
-				var hh=$('.header').outerHeight();
-
-				var gst=bt-hh;
-
-				$('html,body').animate({
-					scrollTop:gst
-				},500);
-
-				// 绑定关闭事件
-				$html.find('.btnclose').click(removeDetail);
-			}
-			// 1. 请求数据
-			getData(dataURL, function(data) {
-				// 2.将数据添加到展开的盒子
-				temDetail(data, function($html) {
-					// 3.动画效果 显示在相应的位置
-					$html.find('.detail-img-box').flexslider({
-						controlNav: false,
-						directionNav: true,
-						pauseOnHover: true
-					});
-					showBox($html);
-				});
-			});
-		});
 	});
 
 
 
 }).call(this);
-
 
 
 function headChange(cls) {
@@ -150,87 +314,11 @@ function scTop() {
 	$.scrollTo('.floor_2', 500);
 }
 
-function productShow(val) {
-	val = parseInt(val);
-	$('.product_spread').animate({
-		height: '0px'
-	}, 500);
-	$('.product_spread').remove();
-	var pdt = '<div class=\"product_spread\"><div class=\"spread_content \"><div class=\"clearfix\"><h1>PRODUCT</h1><div class=\"explain\"><p class=\"title\">SDFDSFF</p><p class=\"introduce\">KDJSFJOSDOFIJDSOJFODSO      OJDFOGIJDODFJGDFIG   DJSOGISDSDVDSVFDS</p></div></div><div class=\"product_show\"><a class=\"cancel\" href=\"javascript:void(0);\" onclick=\"removeShow()\"></a><a class=\"pre\" href=\"javascript:void(0);\"></a><a class=\"next\" href=\"javascript:void(0);\"></a><img src=\"images/product.jpg\" alt=\"\"></div></div></div>';
-	if (val === 0) {
-		$('.product_show_1').before(pdt);
-		$('.product_spread').animate({
-			height: pHeight
-		}, 1000);
-	}
-	if (val === 1) {
-		$('.product_show_2').before(pdt);
-		$('.product_spread').animate({
-			height: pHeight
-		}, 1000);
-	}
-	if (val === 2) {
-		$('.product_show_2').after(pdt);
-		$('.product_spread').animate({
-			height: pHeight
-		}, 1000);
-	}
-	if (val === 3) {
-		$('.product_show_4').before(pdt);
-		$('.product_spread').animate({
-			height: pHeight
-		}, 1000);
-	}
-	if (val === 4) {
-		$('.product_show_4').after(pdt);
-		$('.product_spread').animate({
-			height: pHeight
-		}, 1000);
-	}
-	var pHeight=$(".product_spread ").height();
-
-}
-
-function temDetail(data, callback) {
-	// 渲染详情的模板
-	var tem = $('.product-detail').clone();
-	if (data.status) {
-		var r = data.result;
-		tem.attr('data-id', r.ID);
-		tem.find('.name').html(r.Name + '<a href="' + r.LinkURL + '">链接地址</a>');
-		tem.find('.des').html(r.Des);
-
-		var imgArr = r.Imgs.split(',');
-		var imgbox = tem.find('.slides');
-		imgbox.html('');
-		imgArr.forEach(function(val, index) {
-			var li = '<li><img src="" alt="" /></li>';
-			var $li = $(li);
-			if(val.indexOf('http')!==-1){
-				$li.find('img').attr('src', val);
-			}else{
-				$li.find('img').attr('src', '/'+val);
-			}
-			imgbox.append($li);
-		});
-		callback.call(this, tem);
-	}
-}
-
-
-function removeDetail(){
-	$('.show-product').removeClass('show');// 关闭动画
-	var timer=setTimeout(function(){
-		// 移除内容
-		$('.show-product').html('');//动画结束时移除
-	},500);
-}
-
 function removeShow() {
 	$('.product_spread').animate({
 		height: '0px'
 	}, 500);
-		$('.product_spread').remove();
+	$('.product_spread').remove();
 }
 
 function imgrequest() {
@@ -247,25 +335,3 @@ function imgrequest() {
 		}
 	});
 }
-
-var host = "http://design.boyweb.cn"; //主机地址 阿里云
-var urlObj = {
-	"webInfo": '/getData.php?action=query&name=webInfo',
-	"carousel": '/getData.php?action=query&name=carousel',
-	"product": '/getData.php?action=query&name=product',
-	"productDetail": '/getData.php?action=query&name=product', //要动态加上id
-	"team": '/getData.php?action=query&name=team', //获取团队信息
-	"contact": '/getData.php?action=query&name=contact'
-};
-
-// 处理网页的基本信息
-function webInfo() {
-	var _url = host + urlObj.webInfo;
-	getData(_url, function(data) {
-		console.log(data);
-	});
-}
-
-
-// 执行动作
-webInfo();
