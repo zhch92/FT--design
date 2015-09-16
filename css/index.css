@@ -643,11 +643,13 @@ body {
 }
 .floor_4 .box p {
   display: inline-block;
+  box-sizing: border-box;
   vertical-align: middle;
   line-height: 20px;
   width: 100%;
   text-align: center;
   font-size: 12px;
+  padding: 0 15px;
 }
 .floor_4 .box p span {
   font-size: 16px;
@@ -987,17 +989,18 @@ body {
   padding-top: 70px;
   color: #cb134b;
   margin: 0;
-  padding-left: 102px;
+  padding-left: 5%;
   font-weight: 200;
 }
 .floor_5 .title_1 {
   color: #3f3f3f;
   font-size: 60px;
-  padding-left: 102px;
+  padding-left: 5%;
   font-weight: 200;
 }
 .floor_5 .awards {
   margin-top: 120px;
+  overflow: hidden;
 }
 .floor_5 .awards ul {
   width: 1060px;
@@ -1008,7 +1011,7 @@ body {
   position: relative;
   width: 180px;
   float: left;
-  margin: 0 42px;
+  margin: 0 40px;
 }
 .floor_5 .awards ul li .img {
   width: 175px;
@@ -1026,20 +1029,20 @@ body {
 .floor_6 h1 {
   font-size: 70px;
   color: #cb134b;
-  padding-left: 98px;
+  padding-left: 5%;
   padding-top: 70px;
   margin: 0;
   z-index: 999;
   font-weight: 200;
 }
 .floor_6 .state {
-  padding-left: 98px;
+  padding-left: 5%;
   font-size: 14px;
   color: #a3a3a3;
   z-index: 999;
 }
 .floor_6 h3 {
-  padding-left: 98px;
+  padding-left: 5%;
   font-size: 14px;
   color: #a3a3a3;
   margin-top: 15px;
@@ -1073,13 +1076,14 @@ body {
 }
 .floor_6 .item ul li img {
   width: 100%;
-  height: 100%;
   border: none;
 }
 .floor_6 .item ul li .introduce {
+  box-sizing: border-box;
+  width: 100%;
   padding: 15px;
   position: absolute;
-  bottom: -115px;
+  bottom: -120px;
   left: 0;
   background: #cb134b;
   color: #ffffff;
@@ -1092,6 +1096,7 @@ body {
 .floor_6 .item ul li .introduce .text {
   font-size: 14px;
   line-height: 20px;
+  width: 100%;
 }
 .floor_6 .item .ul_lside_1 {
   opacity: .8;
@@ -1195,13 +1200,13 @@ body {
 }
 .floor_6 .company li {
   float: left;
-  width: 260px;
-  padding-left: 60px;
+  width: 320px;
   font-size: 14px;
   color: #878787;
   padding-top: 20px;
-  line-height: 25px;
+  line-height: 50px;
   position: relative;
+  text-align: center;
 }
 .floor_6 .company li .city {
   font-size: 20px;
@@ -1210,24 +1215,46 @@ body {
 }
 .floor_6 .company li i {
   font-size: 16px;
-  right: 5px;
   font-style: normal;
   position: absolute;
-  right: 3px;
-  top: 23px;
+  right: 0px;
+  top: 24px;
   color: #3f3f3f;
 }
-.floor_6 .company .li_1 {
-  background: url(../images/city_1.png) no-repeat 20px 15px;
+.floor_6 .company li .hide {
+  opacity: 0;
 }
-.floor_6 .company .li_2 {
-  background: url(../images/city_2.png) no-repeat 30px 3px;
+.floor_6 .company em {
+  display: inline-block;
+  vertical-align: middle;
 }
-.floor_6 .company .li_3 {
-  background: url(../images/city_3.png) no-repeat 20px 0px;
+.floor_6 .company .em_1 {
+  width: 37px;
+  height: 24px;
+  background: url(../images/city_1.png) no-repeat 0 center;
+  position: relative;
+  top: -5px;
 }
-.floor_6 .company .li_4 {
-  background: url(../images/city_4.png) no-repeat 22px 15px;
+.floor_6 .company .em_2 {
+  width: 21px;
+  height: 38px;
+  background: url(../images/city_2.png) no-repeat 0 center;
+  position: relative;
+  top: -12px;
+}
+.floor_6 .company .em_3 {
+  width: 22px;
+  height: 44px;
+  background: url(../images/city_3.png) no-repeat 0 center;
+  position: relative;
+  top: -15px;
+}
+.floor_6 .company .em_4 {
+  width: 31px;
+  height: 26px;
+  background: url(../images/city_4.png) no-repeat 0 center;
+  position: relative;
+  top: -5px;
 }
 .floor_7 {
   position: relative;
@@ -1464,7 +1491,7 @@ body {
   }
   .floor_1 .nav ul li {
     float: left;
-    width: 170px;
+    width: 160px;
   }
   .floor_1 .nav ul li:hover .img {
     transform: scale(1.1, 1.1);
@@ -1491,40 +1518,45 @@ body {
     padding-bottom: 50px;
   }
   .floor_1 .nav ul .more {
-    bottom: 0px;
+    right: 40px;
+    bottom: -5px;
   }
-  .floor_1 #more {
+  .floor_2 #more {
     background: #000000;
     padding-bottom: 50px;
   }
-  .floor_1 #more ul {
+  .floor_2 #more ul {
     width: 1024px;
     margin: 0 auto;
   }
-  .floor_1 #more ul li {
+  .floor_2 #more ul li {
     float: left;
     width: 206px;
     margin: 0 17px;
   }
-  .floor_1 #more ul li:hover {
+  .floor_2 #more ul li:hover {
     transform: rotateY(360deg);
     transition: all 2s;
   }
-  .floor_1 #more ul li .img {
+  .floor_2 #more ul li .img {
     margin: 0 auto;
     text-align: center;
     width: 100px;
     height: 100px;
   }
-  .floor_1 #more ul li .img img {
+  .floor_2 #more ul li .img img {
     width: 100%;
     height: 100%;
   }
-  .floor_1 #more ul li .name {
+  .floor_2 #more ul li .name {
     margin-bottom: 5px;
   }
-  .floor_1 #more ul li .describe {
+  .floor_2 #more ul li .describe {
     font-size: 12px;
+  }
+  .floor_5 .awards {
+    width: 1024px;
+    overflow: hidden;
   }
   .floor_6 {
     height: 1200px;
@@ -1532,36 +1564,15 @@ body {
   .floor_6 .item {
     width: 1024px;
     height: 840px;
-  }
-  .floor_6 .item ul li {
-    width: 186px;
-    height: 255px;
-  }
-  .floor_6 .item .ul_1 li:last-child {
-    height: 290px;
-  }
-  .floor_6 .item .ul_2 li:last-child {
-    height: 100px;
-  }
-  .floor_6 .item .ul_3 li:last-child {
-    height: 200px;
-  }
-  .floor_6 .item .ul_4 li:last-child {
-    height: 150px;
-  }
-  .floor_6 .item .ul_5 li:last-child {
-    height: 250px;
+    overflow: hidden;
   }
   .floor_6 .company {
     width: 1024px;
   }
   .floor_6 .company li {
-    width: 216px;
-    padding-left: 40px;
+    width: 256px;
     font-size: 12px;
     color: #878787;
-    padding-top: 20px;
-    line-height: 20px;
   }
   .floor_6 .company li .city {
     font-size: 20px;
@@ -1572,18 +1583,6 @@ body {
     font-size: 16px;
     float: right;
     font-style: normal;
-  }
-  .floor_6 .company .li_1 {
-    background: url(../images/city_1.png) no-repeat 0px 15px;
-  }
-  .floor_6 .company .li_2 {
-    background: url(../images/city_2.png) no-repeat 10px 3px;
-  }
-  .floor_6 .company .li_3 {
-    background: url(../images/city_3.png) no-repeat 10px 0px;
-  }
-  .floor_6 .company .li_4 {
-    background: url(../images/city_4.png) no-repeat 10px 15px;
   }
   .floor_7 {
     height: 755px;
@@ -1705,7 +1704,7 @@ body {
 @media screen and (min-width: 800px) and (max-width: 1024px) {
   .floor_7 {
     height: 625px;
-    background-size: 1000px auto;
+    background-size: 1024px auto;
   }
   .floor_7 h1 {
     padding-top: 30px;
@@ -1726,31 +1725,31 @@ body {
   }
   .floor_7 .contact .sns {
     height: 80px;
-    padding-left: 100px;
-    top: 344px;
-    left: 102px;
+    padding-left: 80px;
+    top: 365px;
+    left: 100px;
     background: url(../images/S_m.png) no-repeat left;
   }
   .floor_7 .contact .e-mail {
     height: 80px;
-    padding-left: 100px;
+    padding-left: 80px;
     background: url(../images/E_m.png) no-repeat left;
-    top: 258px;
+    top: 277px;
     left: 236px;
   }
   .floor_7 .contact .adress {
     height: 80px;
-    padding-left: 100px;
+    padding-left: 80px;
     background: url(../images/A_m.png) no-repeat left;
-    top: 171px;
-    left: 370px;
+    top: 188px;
+    left: 375px;
   }
   .floor_7 .contact .tell {
     height: 80px;
-    padding-left: 100px;
+    padding-left: 80px;
     background: url(../images/M_m.png) no-repeat left;
-    top: 86px;
-    left: 506px;
+    top: 100px;
+    left: 513px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 959px) {
@@ -1767,23 +1766,28 @@ body {
     padding-bottom: 0;
   }
   .floor_1 .nav ul {
-    width: 840px;
+    width: 756px !important;
     margin: 0 auto;
   }
   .floor_1 .nav ul li {
     float: left;
-    width: 135px;
+    width: 126px;
+    margin-top: 0 !important;
   }
   .floor_1 .nav ul li:hover .img {
     transform: scale(1.1, 1.1);
   }
   .floor_1 .nav ul li .img {
     margin: 0 auto;
-    width: 56px;
-    height: 62px;
+    width: 42px;
+    height: 48px;
+  }
+  .floor_1 .nav ul li .img img {
+    width: 100%;
+    height: 100%;
   }
   .floor_1 .nav ul li .title_n {
-    font-size: 16px;
+    font-size: 14px;
     color: #989898;
     margin-top: 15px;
     text-align: center;
@@ -1916,33 +1920,13 @@ body {
   }
   .floor_6 .company li {
     width: 185px;
-    padding-left: 25px;
     font-size: 6px;
     color: #878787;
-    padding-top: 20px;
-    line-height: 20px;
   }
   .floor_6 .company li .city {
     font-size: 14px;
     font-weight: 600;
     margin-right: 5px;
-  }
-  .floor_6 .company li i {
-    font-size: 14px;
-    float: right;
-    font-style: normal;
-  }
-  .floor_6 .company .li_1 {
-    background: url(../images/city_1.png) no-repeat 0px 15px;
-  }
-  .floor_6 .company .li_2 {
-    background: url(../images/city_2.png) no-repeat 5px 3px;
-  }
-  .floor_6 .company .li_3 {
-    background: url(../images/city_3.png) no-repeat 5px 0px;
-  }
-  .floor_6 .company .li_4 {
-    background: url(../images/city_4.png) no-repeat 0px 15px;
   }
   .product_spread {
     padding-bottom: 40px;
@@ -2050,6 +2034,15 @@ body {
     right: -9px;
     bottom: -44px;
   }
+  .floor_2 #more {
+    width: 768px;
+  }
+  .floor_2 #more ul li {
+    width: 162px;
+  }
+  .floor_2 #more ul li .name {
+    margin: 10px 0 5px;
+  }
   .floor_3 {
     height: 468px;
   }
@@ -2057,7 +2050,7 @@ body {
     height: 468px;
   }
   .floor_5 {
-    height: 1000px;
+    height: 500px;
   }
   .floor_5 h1 {
     font-size: 20px;
@@ -2070,7 +2063,17 @@ body {
     margin-top: 10px;
   }
   .floor_5 .awards ul {
-    width: 530px;
+    width: 650px;
+  }
+  .floor_5 .awards ul li {
+    width: 132px;
+    margin: 0 15px;
+  }
+  .floor_5 .awards ul li .img {
+    width: 120px;
+  }
+  .floor_6 {
+    height: 900px;
   }
   .floor_6 h1 {
     font-size: 20px;
@@ -2079,38 +2082,71 @@ body {
   .floor_6 .state {
     padding-left: 5%;
   }
+  .floor_6 .item {
+    width: 650px;
+    height: 480px;
+    overflow: hidden;
+  }
   .floor_6 .item ul {
     width: auto;
   }
   .floor_6 .item ul li {
-    width: 181px;
+    width: 150px;
+    height: 220px;
   }
   .floor_6 .item ul .li_s {
     height: 0 !important;
   }
-  .floor_6 .item .ul_4 {
+  .floor_6 .item .ul_1 {
     left: 0;
-    top: 294px;
+  }
+  .floor_6 .item .ul_1 li:first-child {
+    height: 0;
+  }
+  .floor_6 .item .ul_2 {
+    left: 162px;
+  }
+  .floor_6 .item .ul_2 li:first-child {
+    height: 0;
+  }
+  .floor_6 .item .ul_3 {
+    left: 324px;
+  }
+  .floor_6 .item .ul_3 li:first-child {
+    height: 0;
+  }
+  .floor_6 .item .ul_4 {
+    left: 486px;
+    top: 0px;
+  }
+  .floor_6 .item .ul_4 li:first-child {
+    height: 0;
   }
   .floor_6 .item .ul_5 {
-    left: 210px;
-    top: 590px;
+    left: 0px;
+    top: 226px;
+  }
+  .floor_6 .item .ul_5 li:first-child {
+    height: 0;
   }
   .floor_6 .company {
     width: 650px;
+    margin-top: 50px;
   }
   .floor_6 .company ul li {
     font-size: 12px;
+    width: 325px;
+    padding: 0;
   }
   .floor_6 .company ul li .city {
     font-size: 14px;
-    margin-right: 10px;
   }
-  .floor_6 .company ul .li_1 {
-    width: 160px;
+  .floor_6 .company ul li i {
+    opacity: 0;
   }
-  .floor_6 .company ul .li_3 {
-    width: 160px;
+  .floor_6 .company ul li em {
+    width: 44px !important;
+    background-position: center!important;
   }
   .floor_7 {
     height: 502px;
@@ -2122,7 +2158,7 @@ body {
     font-size: 20px;
   }
   .floor_7 .contact {
-    width: 500px;
+    width: 650px;
   }
   .floor_7 .contact dt {
     color: #a3a3a3;
@@ -2161,6 +2197,7 @@ body {
     background: url(../images/M_m.png) no-repeat left;
   }
   .footer .foot {
+    padding: 25px 0;
     width: 650px;
   }
 }
