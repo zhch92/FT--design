@@ -486,12 +486,13 @@ body {
         }
         p {
             display: inline-block;
+            box-sizing: border-box;
             vertical-align: middle;
             line-height: 20px;
-            width: 98%;
+            width: 100%;
             text-align: center;
             font-size: 12px;
-            padding: 0 5px;
+            padding: 0 15px;
             span {
                 font-size: 16px;
             }
@@ -886,20 +887,20 @@ body {
     h1 {
         font-size: 70px;
         color: #cb134b;
-        padding-left: 98px;
+        padding-left: 5%;
         padding-top: 70px;
         margin: 0;
         z-index: 999;
         font-weight: 200;
     }
     .state {
-        padding-left: 98px;
+        padding-left: 5%;
         font-size: 14px;
         color: #a3a3a3;
         z-index: 999;
     }
     h3 {
-        padding-left: 98px;
+        padding-left: 5%;
         font-size: 14px;
         color: #a3a3a3;
         margin-top: 15px;
@@ -931,12 +932,14 @@ body {
                 }
                 img {
                     width: 100%;
-                    height: 100%;
+                    // height: 100%;
                     border: none;
                 }
                 .introduce {
                     // width: 175px;
                     // height: 85px;
+                    box-sizing: border-box;
+                    width: 100%;
                     padding: 15px;
                     position: absolute;
                     bottom: -120px;
@@ -951,6 +954,7 @@ body {
                     .text {
                         font-size: 14px;
                         line-height: 20px;
+                        width: 100%;
                     }
                 }
             }
@@ -1057,13 +1061,14 @@ body {
         margin: 0 auto;
         li {
             float: left;
-            width: 260px;
-            padding-left: 60px;
+            width: 320px;
+            // padding-left: 60px;
             font-size: 14px;
             color: #878787;
             padding-top: 20px;
-            line-height: 25px;
+            line-height: 50px;
             position: relative;
+            text-align: center;
             .city {
                 font-size: 20px;
                 font-weight: 600;
@@ -1071,30 +1076,48 @@ body {
             }
             i {
                 font-size: 16px;
-                position: absolute;
-                right: 5px;
                 font-style: normal;
                 position: absolute;
-                right: 3px;
-                top: 23px;
+                right: 0px;
+                top: 24px;
                 color: #3f3f3f;
             }
             .hide {
                 opacity: 0;
             }
         }
-        .li_1 {
-            background: url(../images/city_1.png) no-repeat 20px 15px;
+        em{
+        	display: inline-block;
+        	vertical-align: middle;
         }
-        .li_2 {
-            background: url(../images/city_2.png) no-repeat 30px 3px;
+        .em_1 {
+        	width: 37px;
+        	height: 24px;
+            background: url(../images/city_1.png) no-repeat 0 center;
+            position: relative;
+            top: -5px;
+        }
+        .em_2 {
+        	width: 21px;
+        	height: 38px;
+            background: url(../images/city_2.png) no-repeat 0 center;
+            position: relative;
+            top: -12px;
         }
         ;
-        .li_3 {
-            background: url(../images/city_3.png) no-repeat 20px 0px;
+        .em_3 {
+        	width: 22px;
+        	height: 44px;
+            background: url(../images/city_3.png) no-repeat 0 center;
+            position: relative;
+            top: -15px;
         }
-        .li_4 {
-            background: url(../images/city_4.png) no-repeat 22px 15px;
+        .em_4 {
+        	width: 31px;
+        	height: 26px;
+            background: url(../images/city_4.png) no-repeat 0 center;
+            position: relative;
+            top: -5px;
         }
     }
 }
@@ -1459,6 +1482,7 @@ body {
         .item {
             width: 1024px;
             height: 840px;
+            overflow: hidden;
             // ul {
             // 		li {
             // 				width: 186px;
@@ -1498,12 +1522,11 @@ body {
         .company {
             width: 1024px;
             li {
-                width: 216px;
-                padding-left: 40px;
+                width: 256px;
+    
                 font-size: 12px;
                 color: #878787;
-                padding-top: 20px;
-                line-height: 20px;
+
                 .city {
                     font-size: 20px;
                     font-weight: 600;
@@ -1515,19 +1538,7 @@ body {
                     font-style: normal;
                 }
             }
-            .li_1 {
-                background: url(../images/city_1.png) no-repeat 0px 15px;
-            }
-            .li_2 {
-                background: url(../images/city_2.png) no-repeat 10px 3px;
-            }
-            ;
-            .li_3 {
-                background: url(../images/city_3.png) no-repeat 10px 0px;
-            }
-            .li_4 {
-                background: url(../images/city_4.png) no-repeat 10px 15px;
-            }
+            
         }
     }
     .floor_7 {
@@ -1878,34 +1889,16 @@ body {
             width: 840px;
             li {
                 width: 185px;
-                padding-left: 25px;
+                // padding-left: 25px;
                 font-size: 6px;
                 color: #878787;
-                padding-top: 20px;
-                line-height: 20px;
+                // padding-top: 20px;
+                // line-height: 20px;
                 .city {
                     font-size: 14px;
                     font-weight: 600;
                     margin-right: 5px;
                 }
-                i {
-                    font-size: 14px;
-                    float: right;
-                    font-style: normal;
-                }
-            }
-            .li_1 {
-                background: url(../images/city_1.png) no-repeat 0px 15px;
-            }
-            .li_2 {
-                background: url(../images/city_2.png) no-repeat 5px 3px;
-            }
-            ;
-            .li_3 {
-                background: url(../images/city_3.png) no-repeat 5px 0px;
-            }
-            .li_4 {
-                background: url(../images/city_4.png) no-repeat 0px 15px;
             }
         }
     }
@@ -2090,6 +2083,20 @@ body {
             }
         }
     }
+    .floor_2{
+    	#more{
+    		width: 768px;
+    		ul{
+    			li{
+    				width: 162px;
+    				.name{
+    					margin: 10px 0 5px;
+
+    				}
+    			}
+    		}
+    	}
+    }
     .floor_3 {
         height: 468px;
         li {
@@ -2120,7 +2127,7 @@ body {
         }
     }
     .floor_6 {
-        height: 1000px;
+        height: 900px;
         h1 {
             font-size: 20px;
             padding-left: 5%;
@@ -2130,14 +2137,14 @@ body {
         }
         .item {
             width: 650px;
-            height: 575px;
+            height: 480px;
             overflow: hidden;
             ul {
                 width: auto;
                 li {
                     // height: 150px;
                     width: 150px;
-                    height: 280px;
+                    height: 220px;
                 }
                 .li_s {
                     height: 0 !important;
@@ -2170,7 +2177,7 @@ body {
             }
             .ul_5 {
                 left: 0px;
-                top: 280px;
+                top: 226px;
                 li:first-child {
                     height: 0;
                 }
@@ -2182,13 +2189,18 @@ body {
             ul {
                 li {
                     font-size: 12px;
-                    width: 240px;
+                    width: 325px;
+                    padding: 0;
                     .city {
                         font-size: 14px;
-                        margin-right: 10px;
+                        // margin-right: 10px;
                     }
-                    .hide {
-                        opacity: 1;
+                    i{
+                    	opacity: 0;
+                    }
+                    em{
+                    	width: 44px !important;
+                    	background-position: center!important;
                     }
                 }
                 // .li_1{
