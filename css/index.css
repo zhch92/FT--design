@@ -25,6 +25,7 @@
   color: #cb134b;
   min-height: 1px;
   line-height: 1;
+  font-weight: normal;
 }
 .product-detail .info {
   position: relative;
@@ -327,6 +328,7 @@ body {
   text-align: center;
   font-size: 24px;
   line-height: 58px;
+  font-weight: 400;
 }
 .floor_1 .nav .more {
   position: absolute;
@@ -349,9 +351,12 @@ body {
 .floor_1 .nav ul li {
   float: left;
   width: 200px;
+  color: #989898;
 }
 .floor_1 .nav ul li:hover .img {
-  transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  transform: scale(1.1);
 }
 .floor_1 .nav ul li .img {
   margin: 0 auto;
@@ -361,14 +366,14 @@ body {
   cursor: pointer;
 }
 .floor_1 .nav ul li .title_n {
+  opacity: .8;
   font-size: 18px;
-  color: #989898;
   margin-top: 15px;
   text-align: center;
 }
 .floor_1 .nav ul li .title_n_d {
+  opacity: .8;
   font-size: 12px;
-  color: #989898;
   margin-top: 15px;
   text-align: center;
 }
@@ -377,6 +382,34 @@ body {
 }
 .floor_1 .nav ul .more_active {
   background: url(../images/more_active.png) center 0px no-repeat;
+}
+@media screen and (min-width: 1200px) and (max-width: 1450px) {
+  .floor_1 .nav {
+    position: relative;
+    padding: 0 0 20px;
+  }
+  .floor_1 .nav ul li .img {
+    width: 40px;
+    height: 40px;
+  }
+  .floor_1 .nav ul li .img img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .floor_1 .nav ul li .title_n {
+    font-size: 16px;
+  }
+  .floor_1 .nav ul li .title_n_d {
+    margin-top: 6px;
+  }
+  .floor_1 .nav .title {
+    padding: 8px 0 10px;
+    line-height: 40px;
+  }
+  .floor_1 .nav .more {
+    bottom: -10px;
+  }
 }
 .floor_2 .title {
   padding-top: 15px;
@@ -459,9 +492,9 @@ body {
 .floor_2 #more ul li {
   float: left;
   width: 25%;
-}
-.floor_2 #more ul li:hover {
-  transform: rotateY(360deg);
+  cursor: pointer;
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
   transition: all 2s;
 }
 .floor_2 #more ul li .img {
@@ -470,8 +503,14 @@ body {
   height: 136px;
 }
 .floor_2 #more ul li .img img {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+}
+.floor_2 #more ul li .img:hover {
+  -webkit-animation: ele-rotate 1s ease-out running both;
+  -moz-animation: ele-rotate 1s ease-out running both;
+  animation: ele-rotate 1s ease-out running both;
 }
 .floor_2 #more ul li p {
   color: #989898;
@@ -485,6 +524,53 @@ body {
 .floor_2 #more ul li .describe {
   font-size: 12px;
   line-height: 20px;
+  height: 40px;
+  overflow: hidden;
+}
+@-webkit-keyframes ele-rotate {
+  from {
+    opacity: .3;
+    -webkit-transform: rotateX(0) rotateZ(0) rotateY(0deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotateX(0) rotateZ(0) rotateY(180deg);
+  }
+}
+@-moz-keyframes ele-rotate {
+  from {
+    opacity: .3;
+    -moz-transform: rotateX(0) rotateZ(0) rotateY(0deg);
+  }
+  to {
+    opacity: 1;
+    -moz-transform: rotateX(0) rotateZ(0) rotateY(180deg);
+  }
+}
+@keyframes ele-rotate {
+  from {
+    opacity: .3;
+    transform: rotateX(0) rotateZ(0) rotateY(0deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0) rotateZ(0) rotateY(180deg);
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1450px) {
+  .floor_2 #more .title {
+    font-size: 20px;
+    padding: 10px 0 0;
+    line-height: 40px;
+  }
+  .floor_2 #more ul li .img {
+    width: 100px;
+    height: 100px;
+  }
+  .floor_2 #more ul li .name {
+    font-size: 16px;
+    margin: 10px 0 10px;
+  }
 }
 .floor_3 {
   position: relative;
@@ -612,11 +698,28 @@ body {
   background: #d1062b;
   opacity: 1;
 }
+@media screen and (min-width: 1200px) and (max-width: 1450px) {
+  .floor_3 {
+    height: 740px;
+  }
+  .floor_3 .slides li {
+    height: 740px;
+  }
+}
 .floor_4 img {
   transition: all .5s;
 }
 .floor_4 .p-item {
   cursor: pointer;
+}
+.floor_4 .num {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 20;
+  font-size: 20px;
+  color: red;
+  font-weight: bold;
 }
 .floor_4 .box {
   position: absolute;
@@ -1064,18 +1167,20 @@ body {
   position: absolute;
 }
 .floor_6 .item ul li {
+  position: relative;
   background: #1d1d1d;
   height: 290px;
   width: 205px;
   margin-bottom: 6px;
-  position: relative;
   overflow: hidden;
 }
 .floor_6 .item ul li:hover .introduce {
   bottom: 0px;
 }
 .floor_6 .item ul li img {
+  display: block;
   width: 100%;
+  height: auto;
   border: none;
 }
 .floor_6 .item ul li .introduce {
@@ -1083,7 +1188,7 @@ body {
   width: 100%;
   padding: 15px;
   position: absolute;
-  bottom: -120px;
+  bottom: -290px;
   left: 0;
   background: #cb134b;
   color: #ffffff;
@@ -2251,3 +2356,4 @@ body {
     background: url(../images/M_m.png) no-repeat left;
   }
 }
+/*# sourceMappingURL=css/index.css.map */

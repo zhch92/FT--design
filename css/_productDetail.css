@@ -25,6 +25,7 @@
   color: #cb134b;
   min-height: 1px;
   line-height: 1;
+  font-weight: normal;
 }
 .product-detail .info {
   position: relative;

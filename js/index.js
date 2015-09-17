@@ -321,17 +321,3 @@ function removeShow() {
 	$('.product_spread').remove();
 }
 
-function imgrequest() {
-	$.ajax({
-		url: "",
-		type: 'post',
-		data: {},
-		dataType: "json",
-		success: function(data) {
-			alert('0');
-		},
-		error: function(data) {
-			alert('1');
-		}
-	});
-}
