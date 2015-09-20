@@ -46,7 +46,7 @@
 		getData(_url, function(data) {
 			var cData = data.result;
 			var tem = '<li data-index="pindex" data-id="pid" data-src="imgsrc" style="background: url(imgsrc) center no-repeat; background-size:100% auto;"></li>';
-			cData.forEach(function(val, i) {
+			$(cData).each(function(i,val) {
 				var _src = val.CarouselImg;
 				var t_str;
 				if (_src.indexOf('http') !== -1) {
@@ -74,7 +74,7 @@
 		getData(_url, function(data) {
 			var pitems = $('.p-item');
 			var pData = data.result;
-			pData.forEach(function(val, i) {
+			$(pData).each(function(i,val) {
 				var index = parseInt(val.Position);
 				var ele = pitems.eq(index - 1);
 
@@ -155,7 +155,7 @@
 			var tData=data.result;
 			var userBoxs=$('#teamBox .user-item');
 
-			tData.forEach(function(val,index){
+			$(tData).each(function(index,val){
 				var img=userBoxs.eq(index).find('img'),
 						name=userBoxs.eq(index).find('.name'),
 						text=userBoxs.eq(index).find('.text');
@@ -176,7 +176,7 @@
 		getData(_url,function(data){
 			var cData=data.result;
 			var cBoxs=$('#contactBox .w-ele');
-			cData.forEach(function(val,index){
+			$(cData).each(function(index,val){
 				var type=parseInt(val.Type);
 				var ele=cBoxs.eq(type);
 				var str='<dd data-id="'+val.ID+'">'+val.Title+':'+val.Content+'</dd>';
@@ -197,7 +197,7 @@
 			var imgArr = r.Imgs.split(',');
 			var imgbox = tem.find('.slides');
 			imgbox.html('');
-			imgArr.forEach(function(val, index) {
+			$(imgArr).each(function(index, val) {
 				var li = '<li><img src="" alt="" /></li>';
 				var $li = $(li);
 				if (val.indexOf('http') !== -1) {
