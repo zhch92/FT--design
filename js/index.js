@@ -1,6 +1,7 @@
 (function() {
 
 	var host = "http://design.boyweb.cn"; //主机地址 阿里云
+	// var host="";//本地调试
 	var urlObj = {
 		"webInfo": host + '/getData.php?action=query&name=webInfo',
 		"carousel": host + '/getData.php?action=query&name=carousel',
@@ -45,9 +46,9 @@
 		var _url = urlObj.carousel;
 		getData(_url, function(data) {
 			var cData = data.result;
-			var tem = '<li data-index="pindex" data-id="pid" data-src="imgsrc" style="background: url(imgsrc) center no-repeat; background-size:100% auto;"></li>';
+			var tem = '<li data-index="pindex" data-id="pid" data-src="imgsrc" style="background: url(imgsrc) center no-repeat; background-size:100% auto;" title="img_title" alt="img_des"></li>';
 			$(cData).each(function(i,val) {
-				var _src = val.CarouselImg;
+				var _src = val.Image;
 				var t_str;
 				if (_src.indexOf('http') !== -1) {
 					t_str = tem.replace(/imgsrc/g, _src);
@@ -56,6 +57,8 @@
 				}
 				t_str = t_str.replace(/pindex/g, i);
 				t_str = t_str.replace(/pid/g, val.ID);
+				t_str = t_str.replace(/img_title/g, val.Name);
+				t_str = t_str.replace(/img_des/g, val.Des);
 
 				$("#b04 ul").append(t_str);
 			});
