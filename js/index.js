@@ -46,7 +46,7 @@
 		var _url = urlObj.carousel;
 		getData(_url, function(data) {
 			var cData = data.result;
-			var tem = '<li data-index="pindex" data-id="pid" data-src="imgsrc" style="background: url(imgsrc) center no-repeat; background-size:100% auto;" title="img_title" alt="img_des"></li>';
+			var tem = '<li data-index="pindex" data-id="pid" data-src="imgsrc" title="img_title" alt="img_des"><img data-index="pindex" data-id="pid" data-src="imgsrc" src="imgsrc" title="img_title" alt="img_des"/></li>';
 			$(cData).each(function(i,val) {
 				var _src = val.Image;
 				var t_str;
