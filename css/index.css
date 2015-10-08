@@ -242,6 +242,7 @@ footer.footer .info .f-contact {
 footer.footer .info .f-contact > span {
   display: inline-block;
   margin-right: 30px;
+  min-width: 184px;
 }
 footer.footer .info .weixin {
   position: absolute;
@@ -264,6 +265,7 @@ footer.footer .info .weixin p {
 }
 footer.footer .copyright {
   font-size: 12px;
+  margin: 10px 0 0;
   color: #a3a3a3;
   color: rgba(163, 163, 163, 0.6);
 }
