@@ -29,7 +29,7 @@
 }
 .product-detail .info {
   position: relative;
-  margin: 0 0 0 325px;
+  margin: 0 0 20px 325px;
   color: #fff;
   color: rgba(255, 255, 255, 0.75);
 }
@@ -60,8 +60,8 @@
 }
 .product-detail .btnclose {
   position: absolute;
-  top: 40px;
-  right: -40px;
+  top: 50px;
+  right: -30px;
   z-index: 10;
   width: 90px;
   height: 90px;
@@ -165,7 +165,8 @@
   .product-detail .btnclose {
     width: 50px;
     height: 50px;
-    right: -22px;
+    right: -18px;
+    top: 60px;
     background-size: 100% auto;
   }
   .product-detail .detail-img-box .slides li {
@@ -196,7 +197,7 @@
   .product-detail .btnclose {
     width: 30px;
     height: 30px;
-    top: 50px;
+    top: 70px;
     right: -12px;
     background-size: 100% auto;
   }
@@ -320,6 +321,61 @@ body {
   font-variant: normal;
   font-weight: normal;
 }
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.web-title {
+  position: relative;
+  padding: 70px 0 0 70px;
+}
+.web-partial-title {
+  font-size: 60px;
+  color: #cb134b;
+  font-weight: 200;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+.web-partial-des {
+  font-size: 36px;
+  color: #3f3f3f;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 980px) and (max-width: 1199px) {
+  .web-title {
+    padding: 40px 0 0 40px;
+  }
+  .web-partial-title {
+    font-size: 40px;
+  }
+  .web-partial-des {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 979px) {
+  .web-title {
+    padding: 20px 0 0 20px;
+  }
+  .web-partial-title {
+    font-size: 34px;
+  }
+  .web-partial-des {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 599px) {
+  .web-title {
+    padding: 20px 0 0 20px;
+  }
+  .web-partial-title {
+    font-size: 18px;
+  }
+  .web-partial-des {
+    font-size: 14px;
+  }
+}
 .header {
   width: 100%;
   position: fixed;
@@ -383,6 +439,10 @@ body {
   animation: slide-left 1s;
   margin-top: 50px;
 }
+.floor_1 .nav_show .logo_img img {
+  max-width: 200px;
+  max-height: 200px;
+}
 .floor_1 .nav_show .logo_font {
   margin-top: 20px;
   animation: slide-left 1.5s;
@@ -410,16 +470,26 @@ body {
 }
 .floor_1 .nav .more {
   position: absolute;
-  bottom: -40px;
+  width: 40px;
+  height: 16px;
+  bottom: 4px;
+  left: 50%;
   cursor: pointer;
-  right: -50px;
   padding-top: 15px;
-  padding-bottom: 10px;
+  margin: 0 0 0 -20px;
   color: #989898;
   font-size: 12px;
   text-decoration: none;
-  background: url(../images/more.png) center 0px no-repeat;
   animation: breathe 3s infinite linear;
+  text-align: center;
+}
+.floor_1 .nav .more .icon-more {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 20px;
+  height: 11px;
+  background: transparent url(../images/more.png) center no-repeat;
 }
 .floor_1 .nav ul {
   width: 1200px;
@@ -458,8 +528,10 @@ body {
 .floor_1 .nav ul .li_1 {
   background: url(../images/nav_r.png) right 10px no-repeat;
 }
-.floor_1 .nav ul .more_active {
-  background: url(../images/more_active.png) center 0px no-repeat;
+.floor_1 .nav ul .more_active .icon-more {
+  width: 20px;
+  height: 11px;
+  background: transparent url(../images/more_active.png) center no-repeat;
 }
 @media screen and (min-width: 1200px) and (max-width: 1450px) {
   .floor_1 .nav {
@@ -484,9 +556,6 @@ body {
   .floor_1 .nav .title {
     padding: 8px 0 10px;
     line-height: 40px;
-  }
-  .floor_1 .nav .more {
-    bottom: -10px;
   }
 }
 .floor_2 .title {
@@ -543,25 +612,12 @@ body {
 .floor_2 .nav ul .li_1 {
   background: url(../images/nav_r.png) no-repeat right 10px;
 }
-.floor_2 .more {
-  position: absolute;
-  bottom: 0;
-  right: 65px;
-  padding-top: 15px;
-  padding-bottom: 10px;
-  color: #989898;
-  font-size: 12px;
-  text-decoration: none;
-  background: url(../images/more.png) center 0px no-repeat;
-  animation: breathe 1.5s infinite linear;
-}
-.floor_2 .more_active {
-  background: url(../images/more_active.png) center 0px no-repeat;
-}
 .floor_2 #more {
   background: #000000;
   padding-bottom: 50px;
   display: none;
+  border-top: 1px solid #ddd;
+  border-top: 1px solid rgba(243, 241, 241, 0.14);
 }
 .floor_2 #more ul {
   width: 1160px;
@@ -603,6 +659,7 @@ body {
   font-size: 12px;
   line-height: 20px;
   height: 40px;
+  margin: 0 20px;
   overflow: hidden;
 }
 @-webkit-keyframes ele-rotate {
@@ -697,9 +754,9 @@ body {
 .floor_3 .flex-control-nav li {
   display: inline-block;
   border-radius: 14px;
-  width: 14px;
-  height: 14px;
-  margin: 0 8px;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
   *display: inline;
   zoom: 1;
 }
@@ -707,8 +764,8 @@ body {
   display: inline-block;
   border: 1px solid #b8b8b8;
   border-radius: 10px;
-  width: 14px;
-  height: 14px;
+  width: 8px;
+  height: 8px;
   line-height: 40px;
   overflow: hidden;
   cursor: pointer;
@@ -1142,7 +1199,7 @@ body {
 .floor_5 {
   position: relative;
   width: 100%;
-  height: 911px;
+  height: 800px;
 }
 .floor_5 .bg {
   vertical-align: top;
@@ -1155,22 +1212,8 @@ body {
   border: 0;
   display: block;
 }
-.floor_5 h1 {
-  font-size: 70px;
-  padding-top: 70px;
-  color: #cb134b;
-  margin: 0;
-  padding-left: 5%;
-  font-weight: 200;
-}
-.floor_5 .title_1 {
-  color: #3f3f3f;
-  font-size: 60px;
-  padding-left: 5%;
-  font-weight: 200;
-}
 .floor_5 .awards {
-  margin-top: 120px;
+  margin-top: 80px;
   overflow: hidden;
 }
 .floor_5 .awards ul {
@@ -1202,23 +1245,12 @@ body {
   background: #1b1b1b;
   height: 1360px;
 }
-.floor_6 h1 {
-  font-size: 70px;
-  color: #cb134b;
-  padding-left: 5%;
-  padding-top: 70px;
-  margin: 0;
-  z-index: 999;
-  font-weight: 200;
-}
 .floor_6 .state {
-  padding-left: 5%;
   font-size: 14px;
   color: #a3a3a3;
   z-index: 999;
 }
 .floor_6 h3 {
-  padding-left: 5%;
   font-size: 14px;
   color: #a3a3a3;
   margin-top: 15px;
@@ -1391,6 +1423,10 @@ body {
   font-weight: 600;
   margin-right: 20px;
 }
+.floor_6 .company li .name {
+  display: inline-block;
+  line-height: 18px;
+}
 .floor_6 .company li i {
   font-size: 16px;
   font-style: normal;
@@ -1440,6 +1476,14 @@ body {
   overflow: hidden;
   background: url(../images/banner_4.jpg) center no-repeat;
 }
+.floor_7 .web-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.floor_7 .title-empty-box {
+  height: 148px;
+}
 .floor_7 .bg {
   vertical-align: top;
   position: absolute;
@@ -1450,14 +1494,6 @@ body {
   height: 100%;
   border: 0;
   display: block;
-}
-.floor_7 h1 {
-  font-size: 70px;
-  padding-top: 70px;
-  color: #cb134b;
-  margin: 0;
-  padding-left: 5%;
-  font-weight: 200;
 }
 .floor_7 .contact {
   position: relative;
@@ -1608,9 +1644,6 @@ body {
     position: relative;
     height: 200px;
   }
-  .floor_1 .nav ul .more {
-    bottom: -55px;
-  }
   .floor_6 .item .ul_lside_1 {
     height: auto;
   }
@@ -1681,10 +1714,6 @@ body {
     background: url(../images/nav_r.png) no-repeat right 10px;
     padding-bottom: 50px;
   }
-  .floor_1 .nav ul .more {
-    right: 40px;
-    bottom: -5px;
-  }
   .floor_2 #more {
     background: #000000;
     padding-bottom: 50px;
@@ -1751,8 +1780,8 @@ body {
     height: 755px;
     background-size: 1200px auto;
   }
-  .floor_7 h1 {
-    padding-top: 30px;
+  .floor_7 .title-empty-box {
+    height: 122px;
   }
   .floor_7 .contact {
     width: 1024px;
@@ -1866,8 +1895,8 @@ body {
     height: 625px;
     background-size: 1024px auto;
   }
-  .floor_7 h1 {
-    padding-top: 30px;
+  .floor_7 .title-empty-box {
+    height: 106px;
   }
   .floor_7 .contact {
     width: 800px;
@@ -1961,9 +1990,6 @@ body {
   .floor_1 .nav ul .li_1 {
     background: url(../images/nav_r.png) no-repeat right 10px;
   }
-  .floor_1 .nav ul .more {
-    right: 0;
-  }
   .floor_2 #more {
     background: #000000;
     padding-bottom: 50px;
@@ -1993,13 +2019,6 @@ body {
   }
   .floor_5 {
     height: 700px;
-  }
-  .floor_5 h1 {
-    padding-top: 50px;
-    font-size: 80px;
-  }
-  .floor_5 .title_1 {
-    font-size: 50px;
   }
   .floor_5 .awards {
     margin-top: 80px;
@@ -2189,11 +2208,6 @@ body {
   .floor_1 .nav ul .li_s {
     margin-top: 10px;
   }
-  .floor_1 .nav ul .more {
-    font-size: 8px;
-    right: -9px;
-    bottom: -44px;
-  }
   .floor_2 #more {
     width: 768px;
   }
@@ -2205,13 +2219,6 @@ body {
   }
   .floor_5 {
     height: 500px;
-  }
-  .floor_5 h1 {
-    font-size: 20px;
-    padding-left: 5%;
-  }
-  .floor_5 .title_1 {
-    font-size: 18px;
   }
   .floor_5 .awards {
     margin-top: 10px;
@@ -2228,13 +2235,6 @@ body {
   }
   .floor_6 {
     height: 900px;
-  }
-  .floor_6 h1 {
-    font-size: 20px;
-    padding-left: 5%;
-  }
-  .floor_6 .state {
-    padding-left: 5%;
   }
   .floor_6 .item {
     width: 650px;
@@ -2306,10 +2306,8 @@ body {
     height: 502px;
     background-size: 800px auto;
   }
-  .floor_7 h1 {
-    padding-top: 30px;
-    padding-left: 5%;
-    font-size: 20px;
+  .floor_7 .title-empty-box {
+    height: 80px;
   }
   .floor_7 .contact {
     width: 650px;
@@ -2355,11 +2353,6 @@ body {
   .floor_7 {
     height: 450px;
     background-size: 750px auto;
-  }
-  .floor_7 h1 {
-    padding-top: 30px;
-    padding-left: 20px;
-    font-size: 30px;
   }
   .floor_7 .contact {
     width: 400px;
