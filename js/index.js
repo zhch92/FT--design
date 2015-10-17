@@ -164,7 +164,6 @@
 						text=userBoxs.eq(index).find('.text');
 				img.attr({
 					'src':val.Image.indexOf('http')!==-1 ? val.Image : host+'/'+val.Image,
-					'title':val.Des,
 					'alt':val.Post,
 					'data-id':val.ID
 				});
@@ -299,10 +298,16 @@ function headChange(cls) {
 	$(".header .head ul " + '.' + cls).addClass("active").siblings().removeClass("active");
 }
 
-function moreShow() {
+$('#btnMore').click(function(){
+	var $this=$(this);
 	var goalBox = $("#more");
 	var display = goalBox.css("display");
 	$(".floor_2 .more").toggleClass('more_active');
+	if($this.hasClass('more_active')){
+		$this.removeClass('more_active');
+	}else{
+		$this.addClass('more_active');
+	}
 	goalBox.slideToggle();
 	var wh = $(window).height();
 	var sT = $(window).scrollTop();
@@ -311,7 +316,7 @@ function moreShow() {
 			scrollTop: 350
 		});
 	}
-}
+});
 
 function scTop() {
 	$.scrollTo('.floor_2', 500);

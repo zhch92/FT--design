@@ -480,7 +480,10 @@ body {
   color: #989898;
   font-size: 12px;
   text-decoration: none;
-  animation: breathe 3s infinite linear;
+  -webkit-animation: breathe 3s infinite cubic-bezier(0.4, 0, 1, 1);
+  -moz-animation: breathe 3s infinite cubic-bezier(0.4, 0, 1, 1);
+  -o-animation: breathe 3s infinite cubic-bezier(0.4, 0, 1, 1);
+  animation: breathe 3s infinite cubic-bezier(0.4, 0, 1, 1);
   text-align: center;
 }
 .floor_1 .nav .more .icon-more {
@@ -490,6 +493,11 @@ body {
   width: 20px;
   height: 11px;
   background: transparent url(../images/more.png) center no-repeat;
+}
+.floor_1 .nav .more.more_active .icon-more {
+  width: 20px;
+  height: 11px;
+  background: transparent url(../images/more_active.png) center no-repeat;
 }
 .floor_1 .nav ul {
   width: 1200px;
@@ -527,11 +535,6 @@ body {
 }
 .floor_1 .nav ul .li_1 {
   background: url(../images/nav_r.png) right 10px no-repeat;
-}
-.floor_1 .nav ul .more_active .icon-more {
-  width: 20px;
-  height: 11px;
-  background: transparent url(../images/more_active.png) center no-repeat;
 }
 @media screen and (min-width: 1200px) and (max-width: 1450px) {
   .floor_1 .nav {
