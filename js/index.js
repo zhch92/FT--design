@@ -1,7 +1,7 @@
 (function() {
 
-	// var host = "http://design.boyweb.cn"; //主机地址 阿里云
-	var host="";//本地调试
+	var host = "http://design.boyweb.cn"; //主机地址 阿里云
+	// var host="";//本地调试
 	var urlObj = {
 		"webInfo": host + '/getData.php?action=query&name=webInfo',
 		"carousel": host + '/getData.php?action=query&name=carousel',
@@ -83,12 +83,18 @@
 
 				ele.attr({
 					'data-id': val.ID,
-					'data-pos': val.Position
+					'data-pos': val.Position,
+					'data-name':val.Name,
+					'data-des':val.Des,
+					'data-imgs':val.Imgs,
+					'data-image':val.Image,
+					'data-linkurl':val.LinkURL
 				});
 
 				var ptext = ele.find('.box>p');
 				var pimg = ele.find('.inner>img');
-				ptext.html(val.Name + '<br />' + val.Des);
+				ptext.html('<b>'+val.Name+'</b>'+ '<br />' + val.Des);
+				pimg.attr('alt',val.Name);
 				if (val.Image.indexOf('http') !== -1) {
 					pimg.attr('src', val.Image);
 				} else {
@@ -106,6 +112,17 @@
 			var $this = $(this);
 			var id = $this.attr('data-id'); //产品id
 			var pos = $this.attr('data-show-pos'); //显示的位置
+
+
+			var _itemData={
+				ID:$this.attr('data-id'),
+				Position:$this.attr('data-pos'),
+				Name:$this.attr('data-name'),
+				Des:$this.attr('data-des'),
+				Imgs:$this.attr('data-imgs'),
+				Image:$this.attr('data-image'),
+				LinkURL:$this.attr('data-linkurl')
+			};
 
 			var dataURL = '/getData.php?action=query&name=productDetail&id=' + id;
 
@@ -135,18 +152,17 @@
 				// 绑定关闭事件
 				$html.find('.btnclose').click(removeDetail);
 			}
-			// 1. 请求数据
-			getData(dataURL, function(data) {
-				// 2.将数据添加到展开的盒子
-				temDetail(data, function($html) {
-					// 3.动画效果 显示在相应的位置
-					$html.find('.detail-img-box').flexslider({
-						controlNav: false,
-						directionNav: true,
-						pauseOnHover: true
-					});
-					showBox($html);
+
+			debugger;
+
+			temDetail(_itemData, function($html) {
+				// 3.动画效果 显示在相应的位置
+				$html.find('.detail-img-box').flexslider({
+					controlNav: false,
+					directionNav: true,
+					pauseOnHover: true
 				});
+				showBox($html);
 			});
 		});
 	}
@@ -189,9 +205,10 @@
 
 	function temDetail(data, callback) {
 		// 渲染详情的模板
+		data.status=true;
 		var tem = $('.product-detail').clone();
 		if (data.status) {
-			var r = data.result;
+			var r = data;
 			tem.attr('data-id', r.ID);
 			tem.find('.name').html(r.Name + '<a href="' + r.LinkURL + '">链接地址</a>');
 			tem.find('.des').html(r.Des);
@@ -205,7 +222,7 @@
 				if (val.indexOf('http') !== -1) {
 					$li.find('img').attr('src', val);
 				} else {
-					$li.find('img').attr('src','/' + val);
+					$li.find('img').attr('src',host+'/' + val);
 				}
 				imgbox.append($li);
 			});

@@ -17,6 +17,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   left: 0;
   top: 0;
   cursor: pointer;
@@ -47,6 +48,9 @@
   padding: 0 15px;
 }
 .floor_4 .box p span {
+  font-size: 16px;
+}
+.floor_4 .box p b {
   font-size: 16px;
 }
 .floor_4 .product_show_1 {
