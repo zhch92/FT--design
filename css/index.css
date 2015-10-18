@@ -55,8 +55,6 @@
 .product-detail .info > p {
   font-size: 14px;
   line-height: 20px;
-  overflow: hidden;
-  height: 20px;
 }
 .product-detail .btnclose {
   position: absolute;

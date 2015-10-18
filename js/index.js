@@ -142,6 +142,9 @@
 				posBox.addClass('show');
 				posBox.find(".product-detail").css('height', 'auto');
 
+				var calH=posBox.find(".product-detail").height();
+				posBox.height(calH);
+
 				// 移动位置
 				var bt = posBox.offset().top;
 				var bh = posBox.outerHeight();
