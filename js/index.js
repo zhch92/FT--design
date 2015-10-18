@@ -236,6 +236,7 @@
 
 	function removeDetail() {
 		$('.show-product').removeClass('show'); // 关闭动画
+		$('.show-product').height(0);
 		var timer = setTimeout(function() {
 			// 移除内容
 			$('.show-product').html(''); //动画结束时移除
