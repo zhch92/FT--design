@@ -1,7 +1,7 @@
 (function() {
 
-	// var host = "http://design.boyweb.cn"; //主机地址 阿里云
-	var host="";//本地调试
+	var host = "http://design.boyweb.cn"; //主机地址 阿里云
+	// var host="";//本地调试
 	var urlObj = {
 		"webInfo": host + '/getData.php?action=query&name=webInfo',
 		"carousel": host + '/getData.php?action=query&name=carousel',
@@ -91,9 +91,12 @@
 					'data-linkurl':val.LinkURL
 				});
 
+				if(val.Intr===null){
+					val.Intr="";
+				}
 				var ptext = ele.find('.box>p');
 				var pimg = ele.find('.inner>img');
-				ptext.html('<b>'+val.Name+'</b>'+ '<br />' + val.Des);
+				ptext.html('<b>'+val.Name+'</b>'+ '<br />' + val.Intr);
 				pimg.attr('alt',val.Name);
 				if (val.Image.indexOf('http') !== -1) {
 					pimg.attr('src', val.Image);
@@ -152,8 +155,6 @@
 				// 绑定关闭事件
 				$html.find('.btnclose').click(removeDetail);
 			}
-
-			debugger;
 
 			temDetail(_itemData, function($html) {
 				// 3.动画效果 显示在相应的位置
