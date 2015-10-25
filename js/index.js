@@ -1,7 +1,7 @@
 (function() {
 
 	var host = "http://design.boyweb.cn"; //主机地址 阿里云
-	// var host="";//本地调试
+	var host="";//本地调试
 	var urlObj = {
 		"webInfo": host + '/getData.php?action=query&name=webInfo',
 		"carousel": host + '/getData.php?action=query&name=carousel',
