@@ -37,8 +37,8 @@
 			});
 			$('meta[name="keywords"]').attr('content', webData.KeyValue);
 			$("#Logo").attr("src", webData.Logo);
-			$("#aboutUsFile").attr('href', webData.TeamPDF);
-
+			$('#aboutUsInfo').html(webData.TeamIntr);
+			$("#aboutUsFile").attr('href', host+'/'+webData.TeamURL);
 		});
 	}
 
