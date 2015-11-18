@@ -318,6 +318,7 @@ body {
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
+  -webkit-font-smoothing: antialiased;
 }
 .icon {
   display: inline-block;
@@ -1247,6 +1248,9 @@ body {
   text-align: center;
   font-size: 16px;
   font-weight: 700;
+  line-height: 30px;
+  height: 30px;
+  overflow: hidden;
 }
 .floor_6 {
   background: #1b1b1b;
@@ -2390,4 +2394,3 @@ body {
     background: url(../images/M_m.png) no-repeat left;
   }
 }
-/*# sourceMappingURL=css/index.css.map */
