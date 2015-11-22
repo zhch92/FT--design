@@ -30,7 +30,7 @@
 			var webData = data.result;
 
 			var oldName = document.title;
-			document.title = webData.Name + oldName;
+			// document.title = webData.Name + oldName;
 			// $('meta[name="description"]').attr('content', webData.Des);
 			$("#headBg").css({
 				"background-image": 'url("' + webData.HeadImg + '")'
