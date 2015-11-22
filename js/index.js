@@ -31,11 +31,11 @@
 
 			var oldName = document.title;
 			document.title = webData.Name + oldName;
-			$('meta[name="description"]').attr('content', webData.Des);
+			// $('meta[name="description"]').attr('content', webData.Des);
 			$("#headBg").css({
 				"background-image": 'url("' + webData.HeadImg + '")'
 			});
-			$('meta[name="keywords"]').attr('content', webData.KeyValue);
+			// $('meta[name="keywords"]').attr('content', webData.KeyValue);
 			$("#Logo").attr("src", webData.Logo);
 			$('#aboutUsInfo').html(webData.TeamIntr);
 			$("#aboutUsFile").attr('href', host+'/'+webData.TeamURL);
